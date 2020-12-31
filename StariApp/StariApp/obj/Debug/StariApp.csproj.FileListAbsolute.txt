@@ -1,0 +1,35 @@
+E:\Projects\StariApp\StariApp\StariApp\bin\Debug\StariApp.exe.config
+E:\Projects\StariApp\StariApp\StariApp\bin\Debug\StariApp.exe
+E:\Projects\StariApp\StariApp\StariApp\bin\Debug\StariApp.pdb
+E:\Projects\StariApp\StariApp\StariApp\obj\Debug\StariApp.form1.resources
+E:\Projects\StariApp\StariApp\StariApp\obj\Debug\StariApp.Properties.Resources.resources
+E:\Projects\StariApp\StariApp\StariApp\obj\Debug\StariApp.csproj.GenerateResource.cache
+E:\Projects\StariApp\StariApp\StariApp\obj\Debug\StariApp.exe
+E:\Projects\StariApp\StariApp\StariApp\obj\Debug\StariApp.pdb
+E:\Projects\StariApp\StariApp\StariApp\bin\Debug\StariAppDB.mdf
+E:\Projects\StariApp\StariApp\StariApp\bin\Debug\StariAppDB_log.ldf
+E:\Projects\StariApp\StariApp\StariApp\obj\Debug\StariApp.Form2.resources
+E:\Projects\StariApp\StariApp\StariApp\obj\Debug\StariApp.Form3.resources
+E:\Projects\StariApp\StariApp\StariApp\obj\Debug\StariApp.Form4.resources
+E:\Projects\StariApp\StariApp\StariApp\obj\Debug\StariApp.Form5.resources
+E:\Projects\StariApp\StariApp\StariApp\obj\Debug\StariApp.Form6.resources
+E:\Projects\StariApp\StariApp\StariApp\obj\Debug\StariApp.Form7.resources
+E:\Projects\StariApp\StariApp\StariApp\obj\Debug\StariApp.Form8.resources
+E:\Projects\Završeni Projekti\StariApp\StariApp\StariApp\bin\Debug\StariAppDB.mdf
+E:\Projects\Završeni Projekti\StariApp\StariApp\StariApp\bin\Debug\StariAppDB_log.ldf
+E:\Projects\Završeni Projekti\StariApp\StariApp\StariApp\bin\Debug\StariApp.exe.config
+E:\Projects\Završeni Projekti\StariApp\StariApp\StariApp\bin\Debug\StariApp.exe
+E:\Projects\Završeni Projekti\StariApp\StariApp\StariApp\bin\Debug\StariApp.pdb
+E:\Projects\Završeni Projekti\StariApp\StariApp\StariApp\obj\Debug\StariApp.csprojAssemblyReference.cache
+E:\Projects\Završeni Projekti\StariApp\StariApp\StariApp\obj\Debug\StariApp.form1.resources
+E:\Projects\Završeni Projekti\StariApp\StariApp\StariApp\obj\Debug\StariApp.Form2.resources
+E:\Projects\Završeni Projekti\StariApp\StariApp\StariApp\obj\Debug\StariApp.Form3.resources
+E:\Projects\Završeni Projekti\StariApp\StariApp\StariApp\obj\Debug\StariApp.Form4.resources
+E:\Projects\Završeni Projekti\StariApp\StariApp\StariApp\obj\Debug\StariApp.Form5.resources
+E:\Projects\Završeni Projekti\StariApp\StariApp\StariApp\obj\Debug\StariApp.Form6.resources
+E:\Projects\Završeni Projekti\StariApp\StariApp\StariApp\obj\Debug\StariApp.Form7.resources
+E:\Projects\Završeni Projekti\StariApp\StariApp\StariApp\obj\Debug\StariApp.Form8.resources
+E:\Projects\Završeni Projekti\StariApp\StariApp\StariApp\obj\Debug\StariApp.Properties.Resources.resources
+E:\Projects\Završeni Projekti\StariApp\StariApp\StariApp\obj\Debug\StariApp.csproj.GenerateResource.cache
+E:\Projects\Završeni Projekti\StariApp\StariApp\StariApp\obj\Debug\StariApp.exe
+E:\Projects\Završeni Projekti\StariApp\StariApp\StariApp\obj\Debug\StariApp.pdb

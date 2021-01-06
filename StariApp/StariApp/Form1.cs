@@ -75,11 +75,23 @@ namespace StariApp
             form8.Show();
         }
 
+        private StringBuilder returnLarger(StringBuilder s, StringBuilder s2)
+        {
+            if (s.ToString().Split('\n').Length >= s2.ToString().Split('\n').Length)
+                return s;
+            return s2;
+        }
+
         private void button8_Click(object sender, EventArgs e)
         {
-            StringBuilder sb = new StringBuilder();
-            sb.Append("Id,Name,Last Name,Position");
-            sb.Append("\n");
+            StringBuilder StringBuilderWorker = new StringBuilder();
+            StringBuilderWorker.Append("\n");
+
+            StringBuilder tmpSB = new StringBuilder();
+            StringBuilder ReturnStringBuilder = new StringBuilder();
+            ReturnStringBuilder.Append("Worker Id,Name,Last Name,Position,,,Date, Duration, Worker");
+            ReturnStringBuilder.Append("\n");
+
             using (var context = new WorkContext())
             {
                 var Workers = (from s in context.Workers orderby s.name select s).ToList<Worker>();
@@ -88,8 +100,6 @@ namespace StariApp
                 var Works = (from s in context.Works orderby s.Id select s).ToList<Work>();
                 var Positions = (from s in context.Positions orderby s.position select s).ToList<Position>();
 
-                
-
                 foreach (var Worker in Workers)
                 {
                     var Position = context.Positions
@@ -97,12 +107,21 @@ namespace StariApp
                                     .FirstOrDefault();
 
                     Console.WriteLine("ID: {0}, Name: {1}, Position: {2}", Worker.Id, Worker.name, Position.position);
-                    sb.Append(Worker.Id + "," + Worker.name + "," + Worker.lastName + "," + Position.position);
-                    sb.Append("\n");
-
+                    StringBuilderWorker.Append(Worker.Id + "," + Worker.name + "," + Worker.lastName + "," + Position.position);
+                    StringBuilderWorker.Append("\n");
                 }
 
-                //File.WriteAllText("G:\\Projects\\Fax\\OO\\Paint Work Tracker\\PaintWorkTracker\\StariApp\\WorkerTest.csv", sb.ToString(), Encoding.UTF8);
+                foreach (var Work in Works)
+                {
+                    foreach (var Worker in Workers)
+                    {
+                        if (Worker.Id == Work.worker)
+                        {
+                            StringBuilderWorker.Append(Work.date + "," + Work.duration + "," + Worker.name + " " + Worker.lastName);
+                            tmpSB.Append("\n");
+                        }
+                    }
+                }
             }
             
             SaveFileDialog saveFileDialog1 = new SaveFileDialog();
@@ -116,7 +135,7 @@ namespace StariApp
             if (saveFileDialog1.ShowDialog() == DialogResult.OK)
             {
                 var file = new StreamWriter(saveFileDialog1.FileName);
-                foreach(String line in sb.ToString().Split('\n'))
+                foreach(String line in StringBuilderWorker.ToString().Split('\n'))
                 {
                     file.WriteLine(line);
                 }

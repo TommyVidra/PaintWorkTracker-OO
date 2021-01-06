@@ -87,7 +87,7 @@ namespace StariApp
 
                 }
 
-                File.WriteAllText("G:\\Projects\\Fax\\OO\\Paint Work Tracker\\PaintWorkTracker\\StariApp\\WorkerTest.csv", sb.ToString(), Encoding.UTF8); 
+                //File.WriteAllText("G:\\Projects\\Fax\\OO\\Paint Work Tracker\\PaintWorkTracker\\StariApp\\WorkerTest.csv", sb.ToString(), Encoding.UTF8); 
                 foreach (var R in Resource)
                     Console.WriteLine("ID: {0}, Name: {1}", R.Id, R.name);
                 foreach (var P in Positions)

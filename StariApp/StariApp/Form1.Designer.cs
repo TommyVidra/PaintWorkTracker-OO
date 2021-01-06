@@ -39,11 +39,12 @@
             this.button3 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.SideMenuPanel = new System.Windows.Forms.Panel();
+            this.button8 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.button6 = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.eventsViewBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.stariAppDBDataSet6)).BeginInit();
             this.SideMenuPanel.SuspendLayout();
@@ -149,6 +150,7 @@
             // SideMenuPanel
             // 
             this.SideMenuPanel.BackColor = System.Drawing.Color.Teal;
+            this.SideMenuPanel.Controls.Add(this.button8);
             this.SideMenuPanel.Controls.Add(this.button7);
             this.SideMenuPanel.Controls.Add(this.panel1);
             this.SideMenuPanel.Controls.Add(this.button6);
@@ -162,6 +164,16 @@
             this.SideMenuPanel.Name = "SideMenuPanel";
             this.SideMenuPanel.Size = new System.Drawing.Size(212, 549);
             this.SideMenuPanel.TabIndex = 0;
+            // 
+            // button8
+            // 
+            this.button8.Location = new System.Drawing.Point(13, 484);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(75, 23);
+            this.button8.TabIndex = 8;
+            this.button8.Text = "button8";
+            this.button8.UseVisualStyleBackColor = true;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
             // button7
             // 
@@ -189,6 +201,18 @@
             this.panel1.Size = new System.Drawing.Size(212, 104);
             this.panel1.TabIndex = 6;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.label1.Location = new System.Drawing.Point(3, 25);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(102, 55);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "IVT";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
             // button6
             // 
             this.button6.BackColor = System.Drawing.Color.Teal;
@@ -212,18 +236,6 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(586, 525);
             this.panel2.TabIndex = 1;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label1.Location = new System.Drawing.Point(3, 25);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(102, 55);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "IVT";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // form1
             // 
@@ -261,6 +273,7 @@
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button button8;
     }
 }
 

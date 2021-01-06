@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -72,6 +73,55 @@ namespace StariApp
         {
             Form8 form8 = new Form8();
             form8.Show();
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            StringBuilder sb = new StringBuilder();
+            sb.Append("Id,Name,Last Name,Position");
+            sb.Append("\n");
+            using (var context = new WorkContext())
+            {
+                var Workers = (from s in context.Workers orderby s.name select s).ToList<Worker>();
+                var Resource = (from s in context.Resources orderby s.name select s).ToList<Resource>();
+                var Stocks = (from s in context.Stocks orderby s.resource select s).ToList<Stock>();
+                var Works = (from s in context.Works orderby s.Id select s).ToList<Work>();
+                var Positions = (from s in context.Positions orderby s.position select s).ToList<Position>();
+
+                
+
+                foreach (var Worker in Workers)
+                {
+                    var Position = context.Positions
+                                    .Where(c => c.Id == Worker.position)
+                                    .FirstOrDefault();
+
+                    Console.WriteLine("ID: {0}, Name: {1}, Position: {2}", Worker.Id, Worker.name, Position.position);
+                    sb.Append(Worker.Id + "," + Worker.name + "," + Worker.lastName + "," + Position.position);
+                    sb.Append("\n");
+
+                }
+
+                //File.WriteAllText("G:\\Projects\\Fax\\OO\\Paint Work Tracker\\PaintWorkTracker\\StariApp\\WorkerTest.csv", sb.ToString(), Encoding.UTF8);
+            }
+            
+            SaveFileDialog saveFileDialog1 = new SaveFileDialog();
+
+            saveFileDialog1.Filter = "csv files (*.csv)|*.csv|All files (*.*)|*.*";
+            saveFileDialog1.DefaultExt = "csv";
+            saveFileDialog1.FilterIndex = 2;
+            saveFileDialog1.RestoreDirectory = true;
+            saveFileDialog1.AddExtension = true;
+
+            if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                var file = new StreamWriter(saveFileDialog1.FileName);
+                foreach(String line in sb.ToString().Split('\n'))
+                {
+                    file.WriteLine(line);
+                }
+                file.Close();
+            }
         }
     }
 }

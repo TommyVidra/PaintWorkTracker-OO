@@ -38,22 +38,24 @@
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.stariAppDBDataSet12 = new StariApp.StariAppDBDataSet12();
-            this.workerViewBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.workerViewTableAdapter = new StariApp.StariAppDBDataSet12TableAdapters.WorkerViewTableAdapter();
             this.imeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.prezimeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pozicijaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.workerViewBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.stariAppDBDataSet12 = new StariApp.StariAppDBDataSet12();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.workerViewTableAdapter = new StariApp.StariAppDBDataSet12TableAdapters.WorkerViewTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.stariAppDBDataSet12)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.workerViewBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.stariAppDBDataSet12)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // textBox1
             // 
+            this.textBox1.BackColor = System.Drawing.Color.Teal;
+            this.textBox1.ForeColor = System.Drawing.Color.White;
             this.textBox1.Location = new System.Drawing.Point(15, 36);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(165, 20);
@@ -158,37 +160,6 @@
             this.dataGridView1.Size = new System.Drawing.Size(446, 358);
             this.dataGridView1.TabIndex = 8;
             // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.Teal;
-            this.panel1.Controls.Add(this.textBox3);
-            this.panel1.Controls.Add(this.textBox2);
-            this.panel1.Controls.Add(this.button1);
-            this.panel1.Controls.Add(this.button2);
-            this.panel1.Controls.Add(this.textBox1);
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(247, 417);
-            this.panel1.TabIndex = 9;
-            // 
-            // stariAppDBDataSet12
-            // 
-            this.stariAppDBDataSet12.DataSetName = "StariAppDBDataSet12";
-            this.stariAppDBDataSet12.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // workerViewBindingSource
-            // 
-            this.workerViewBindingSource.DataMember = "WorkerView";
-            this.workerViewBindingSource.DataSource = this.stariAppDBDataSet12;
-            // 
-            // workerViewTableAdapter
-            // 
-            this.workerViewTableAdapter.ClearBeforeFill = true;
-            // 
             // imeDataGridViewTextBoxColumn
             // 
             this.imeDataGridViewTextBoxColumn.DataPropertyName = "Ime";
@@ -213,6 +184,37 @@
             this.idDataGridViewTextBoxColumn.HeaderText = "Id";
             this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
             // 
+            // workerViewBindingSource
+            // 
+            this.workerViewBindingSource.DataMember = "WorkerView";
+            this.workerViewBindingSource.DataSource = this.stariAppDBDataSet12;
+            // 
+            // stariAppDBDataSet12
+            // 
+            this.stariAppDBDataSet12.DataSetName = "StariAppDBDataSet12";
+            this.stariAppDBDataSet12.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.Teal;
+            this.panel1.Controls.Add(this.textBox3);
+            this.panel1.Controls.Add(this.textBox2);
+            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.button2);
+            this.panel1.Controls.Add(this.textBox1);
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.label3);
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(247, 417);
+            this.panel1.TabIndex = 9;
+            // 
+            // workerViewTableAdapter
+            // 
+            this.workerViewTableAdapter.ClearBeforeFill = true;
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -225,17 +227,15 @@
             this.Text = "Zaposlenik";
             this.Load += new System.EventHandler(this.Form2_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.workerViewBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.stariAppDBDataSet12)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.stariAppDBDataSet12)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.workerViewBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Label label1;
@@ -252,5 +252,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn prezimeDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn pozicijaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
+        protected System.Windows.Forms.TextBox textBox1;
     }
 }

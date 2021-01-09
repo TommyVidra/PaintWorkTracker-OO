@@ -3309,7 +3309,16 @@
         ejcGAsvDpVu3NzeBs4DeIrMYWRY3LhpxkPEY8n9pZ/pf49QqiwAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="button9.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="minimizeButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAYAAADE6YVjAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wwAADsMBx2+oZAAAAKlJREFUSEvtlsEJgDAMRTtCndwRHKEjOIInb4IgXjwVXEDzpYLYCKakemngndrk
+        tRqMBjEtqyVqwhObEqhnr4I2LGjTERYSGLkNWjSQaD4iFkjYBU2KRESRiCgSEb9KHNEkgLyoHicZjxmQ
+        GJQffXBzSMZbPVbi+2GuQo4oKBcD8NVNADbiRFLY2fQkUeULiYcErcctauHOF5b3byVI0BWaN0IDoB4J
+        jNkBbLNWl/F3dPoAAAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="closeButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
         wwAADsMBx2+oZAAAAdpJREFUOE+VlWkvQ1EQhvkFxAexRW0hlt8o1NYi9sQePpD4WUoIElsJ8YnnuTkn
@@ -3321,15 +3330,6 @@
         WIw1c5zSfeax7c3kAvi0sTP7NAmk8WAw/7svido++3WbPKt1LL8gaiuzzxdncztsKLBmZqpjZmuwHmc/
         ZlqZff442Okj+LK1Zn/2GfuWwuPGTC3VmhtzkLwgwdnsDD4NDa01tS9NSP+8PwFOhPVahImgbdrwyRHD
         n4C50t3r6A9U5Ti5n6Pp3wAAAABJRU5ErkJggg==
-</value>
-  </data>
-  <data name="button10.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAYAAADE6YVjAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wwAADsMBx2+oZAAAAKlJREFUSEvtlsEJgDAMRTtCndwRHKEjOIInb4IgXjwVXEDzpYLYCKakemngndrk
-        tRqMBjEtqyVqwhObEqhnr4I2LGjTERYSGLkNWjSQaD4iFkjYBU2KRESRiCgSEb9KHNEkgLyoHicZjxmQ
-        GJQffXBzSMZbPVbi+2GuQo4oKBcD8NVNADbiRFLY2fQkUeULiYcErcctauHOF5b3byVI0BWaN0IDoB4J
-        jNkBbLNWl/F3dPoAAAAASUVORK5CYII=
 </value>
   </data>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">

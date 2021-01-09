@@ -43,8 +43,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.button9 = new System.Windows.Forms.Button();
-            this.button10 = new System.Windows.Forms.Button();
+            this.closeButton = new System.Windows.Forms.Button();
+            this.minimizeButton = new System.Windows.Forms.Button();
             this.gradientPanel1 = new StariApp.GradientPanel();
             this.gradientPanel2 = new StariApp.GradientPanel();
             ((System.ComponentModel.ISupportInitialize)(this.eventsViewBindingSource)).BeginInit();
@@ -240,36 +240,36 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(64)))), ((int)(((byte)(86)))));
-            this.panel1.Controls.Add(this.button10);
-            this.panel1.Controls.Add(this.button9);
+            this.panel1.Controls.Add(this.minimizeButton);
+            this.panel1.Controls.Add(this.closeButton);
             this.panel1.Location = new System.Drawing.Point(1193, -1);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(49, 70);
             this.panel1.TabIndex = 12;
             // 
-            // button9
+            // closeButton
             // 
-            this.button9.FlatAppearance.BorderSize = 0;
-            this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button9.Image = ((System.Drawing.Image)(resources.GetObject("button9.Image")));
-            this.button9.Location = new System.Drawing.Point(11, 5);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(35, 28);
-            this.button9.TabIndex = 0;
-            this.button9.UseVisualStyleBackColor = true;
-            this.button9.Click += new System.EventHandler(this.button9_Click);
+            this.closeButton.FlatAppearance.BorderSize = 0;
+            this.closeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.closeButton.Image = ((System.Drawing.Image)(resources.GetObject("closeButton.Image")));
+            this.closeButton.Location = new System.Drawing.Point(11, 5);
+            this.closeButton.Name = "closeButton";
+            this.closeButton.Size = new System.Drawing.Size(35, 28);
+            this.closeButton.TabIndex = 0;
+            this.closeButton.UseVisualStyleBackColor = true;
+            this.closeButton.Click += new System.EventHandler(this.closeButton_Click);
             // 
-            // button10
+            // minimizeButton
             // 
-            this.button10.FlatAppearance.BorderSize = 0;
-            this.button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button10.Image = ((System.Drawing.Image)(resources.GetObject("button10.Image")));
-            this.button10.Location = new System.Drawing.Point(11, 39);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(35, 28);
-            this.button10.TabIndex = 1;
-            this.button10.UseVisualStyleBackColor = true;
-            this.button10.Click += new System.EventHandler(this.button10_Click);
+            this.minimizeButton.FlatAppearance.BorderSize = 0;
+            this.minimizeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.minimizeButton.Image = ((System.Drawing.Image)(resources.GetObject("minimizeButton.Image")));
+            this.minimizeButton.Location = new System.Drawing.Point(11, 39);
+            this.minimizeButton.Name = "minimizeButton";
+            this.minimizeButton.Size = new System.Drawing.Size(35, 28);
+            this.minimizeButton.TabIndex = 1;
+            this.minimizeButton.UseVisualStyleBackColor = true;
+            this.minimizeButton.Click += new System.EventHandler(this.minimizeButton_Click);
             // 
             // gradientPanel1
             // 
@@ -352,8 +352,8 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button button9;
-        private System.Windows.Forms.Button button10;
+        private System.Windows.Forms.Button closeButton;
+        private System.Windows.Forms.Button minimizeButton;
     }
 }
 

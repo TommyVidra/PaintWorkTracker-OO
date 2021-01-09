@@ -163,16 +163,6 @@ namespace StariApp
             }
         }
 
-        private void button10_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button9_Click(object sender, EventArgs e)
-        {
-
-        }
-
         Point lastPoint;
         private void gradientPanel1_MouseMove(object sender, MouseEventArgs e)
         {
@@ -187,6 +177,18 @@ namespace StariApp
         private void gradientPanel1_MouseDown(object sender, MouseEventArgs e)
         {
             lastPoint = new Point(e.X, e.Y);
+        }
+
+        private void closeButton_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Do you want to close the application?", "My Application",
+            MessageBoxButtons.YesNo) == DialogResult.Yes)
+                System.Windows.Forms.Application.Exit();
+        }
+
+        private void minimizeButton_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
         }
     }
 }

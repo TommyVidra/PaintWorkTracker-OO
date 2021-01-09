@@ -8,7 +8,6 @@ namespace StariApp
 {
     class Stock
     {
-
         public int Id { get; set; }
         public int resource { get; set; }
         public double amount { get; set; }

@@ -17,7 +17,6 @@ namespace StariApp
         public form1()
         {
             InitializeComponent();
-            
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -82,6 +81,27 @@ namespace StariApp
             return s2;
         }
 
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+
+        private void cardButton1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cardButton1_Load_1(object sender, EventArgs e)
+        {
+
+        }
+
         private void button8_Click(object sender, EventArgs e)
         {
             StringBuilder StringBuilderWorker = new StringBuilder();
@@ -91,7 +111,6 @@ namespace StariApp
             StringBuilder ReturnStringBuilder = new StringBuilder();
             ReturnStringBuilder.Append("Worker Id,Name,Last Name,Position,,,Date, Duration, Worker");
             ReturnStringBuilder.Append("\n");
-
             using (var context = new WorkContext())
             {
                 var Workers = (from s in context.Workers orderby s.name select s).ToList<Worker>();
@@ -105,6 +124,7 @@ namespace StariApp
                     var Position = context.Positions
                                     .Where(c => c.Id == Worker.position)
                                     .FirstOrDefault();
+
 
                     Console.WriteLine("ID: {0}, Name: {1}, Position: {2}", Worker.Id, Worker.name, Position.position);
                     StringBuilderWorker.Append(Worker.Id + "," + Worker.name + "," + Worker.lastName + "," + Position.position);
@@ -123,7 +143,7 @@ namespace StariApp
                     }
                 }
             }
-            
+
             SaveFileDialog saveFileDialog1 = new SaveFileDialog();
 
             saveFileDialog1.Filter = "csv files (*.csv)|*.csv|All files (*.*)|*.*";
@@ -135,12 +155,38 @@ namespace StariApp
             if (saveFileDialog1.ShowDialog() == DialogResult.OK)
             {
                 var file = new StreamWriter(saveFileDialog1.FileName);
-                foreach(String line in StringBuilderWorker.ToString().Split('\n'))
+                foreach (String line in StringBuilderWorker.ToString().Split('\n'))
                 {
                     file.WriteLine(line);
                 }
                 file.Close();
             }
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        Point lastPoint;
+        private void gradientPanel1_MouseMove(object sender, MouseEventArgs e)
+        {
+
+            if(e.Button == MouseButtons.Left)
+            {
+                this.Left += e.X - lastPoint.X;
+                this.Top += e.Y - lastPoint.Y;
+            }
+        }
+
+        private void gradientPanel1_MouseDown(object sender, MouseEventArgs e)
+        {
+            lastPoint = new Point(e.X, e.Y);
         }
     }
 }

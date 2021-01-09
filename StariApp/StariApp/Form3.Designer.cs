@@ -41,9 +41,7 @@
             this.button2 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.stariAppDBDataSet13 = new StariApp.StariAppDBDataSet13();
             this.resourceBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.resourceTableAdapter = new StariApp.StariAppDBDataSet13TableAdapters.ResourceTableAdapter();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.priceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -51,7 +49,6 @@
             this.metricDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.stariAppDBDataSet13)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.resourceBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -201,17 +198,13 @@
             // 
             // stariAppDBDataSet13
             // 
-            this.stariAppDBDataSet13.DataSetName = "StariAppDBDataSet13";
-            this.stariAppDBDataSet13.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // resourceBindingSource
             // 
             this.resourceBindingSource.DataMember = "Resource";
-            this.resourceBindingSource.DataSource = this.stariAppDBDataSet13;
             // 
             // resourceTableAdapter
             // 
-            this.resourceTableAdapter.ClearBeforeFill = true;
             // 
             // idDataGridViewTextBoxColumn
             // 
@@ -257,7 +250,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.stariAppDBDataSet13)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.resourceBindingSource)).EndInit();
             this.ResumeLayout(false);
 
@@ -276,9 +268,7 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Panel panel1;
-        private StariAppDBDataSet13 stariAppDBDataSet13;
         private System.Windows.Forms.BindingSource resourceBindingSource;
-        private StariAppDBDataSet13TableAdapters.ResourceTableAdapter resourceTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn priceDataGridViewTextBoxColumn;

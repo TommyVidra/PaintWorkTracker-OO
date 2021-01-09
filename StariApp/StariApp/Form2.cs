@@ -25,9 +25,11 @@ namespace StariApp
 
         private void Form2_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'stariAppDBDataSet12.WorkerView' table. You can move, or remove it, as needed.
-            this.workerViewTableAdapter.Fill(this.stariAppDBDataSet12.WorkerView);
-           
+            DataTable WorkerTabel = new DataTable();
+
+            WorkerTabel.Columns.Add("Id", typeof(int));
+
+            dataGridView1.DataSource = WorkerTabel;
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)

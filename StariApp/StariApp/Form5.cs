@@ -50,10 +50,6 @@ namespace StariApp
 
         private void Form5_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'stariAppDBDataSet5.Position' table. You can move, or remove it, as needed.
-            this.positionTableAdapter.Fill(this.stariAppDBDataSet5.Position);
-            
-
         }
 
         private void DisplayData()

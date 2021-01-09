@@ -42,16 +42,13 @@
             this.nampomenaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.imeIPrezimeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.noteViewBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.stariAppDBDataSet3 = new StariApp.StariAppDBDataSet3();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.noteViewTableAdapter = new StariApp.StariAppDBDataSet3TableAdapters.NoteViewTableAdapter();
             this.panel1 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.noteViewBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.stariAppDBDataSet3)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -166,12 +163,9 @@
             // noteViewBindingSource
             // 
             this.noteViewBindingSource.DataMember = "NoteView";
-            this.noteViewBindingSource.DataSource = this.stariAppDBDataSet3;
             // 
             // stariAppDBDataSet3
             // 
-            this.stariAppDBDataSet3.DataSetName = "StariAppDBDataSet3";
-            this.stariAppDBDataSet3.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // button1
             // 
@@ -228,7 +222,6 @@
             // 
             // noteViewTableAdapter
             // 
-            this.noteViewTableAdapter.ClearBeforeFill = true;
             // 
             // panel1
             // 
@@ -262,7 +255,6 @@
             this.Load += new System.EventHandler(this.Form4_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.noteViewBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.stariAppDBDataSet3)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
@@ -282,9 +274,7 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.Label label4;
-        private StariAppDBDataSet3 stariAppDBDataSet3;
         private System.Windows.Forms.BindingSource noteViewBindingSource;
-        private StariAppDBDataSet3TableAdapters.NoteViewTableAdapter noteViewTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn datumDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nampomenaDataGridViewTextBoxColumn;

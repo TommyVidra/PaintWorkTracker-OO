@@ -63,7 +63,8 @@ namespace StariApp
             //        connection.Close();
             //    }
             //}
-            using(var context = new WorkContext())
+
+            using (var context = new WorkContext())
             {
                 var Workers = (from s in context.Workers orderby s.name select s).ToList<Worker>();
                 var Resource = (from s in context.Resources orderby s.name select s).ToList<Resource>();

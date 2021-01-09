@@ -37,14 +37,11 @@
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.positionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.positionBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.stariAppDBDataSet5 = new StariApp.StariAppDBDataSet5();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.positionTableAdapter = new StariApp.StariAppDBDataSet5TableAdapters.PositionTableAdapter();
             this.panel1 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.positionBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.stariAppDBDataSet5)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -125,12 +122,9 @@
             // positionBindingSource
             // 
             this.positionBindingSource.DataMember = "Position";
-            this.positionBindingSource.DataSource = this.stariAppDBDataSet5;
             // 
             // stariAppDBDataSet5
             // 
-            this.stariAppDBDataSet5.DataSetName = "StariAppDBDataSet5";
-            this.stariAppDBDataSet5.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // textBox2
             // 
@@ -152,7 +146,6 @@
             // 
             // positionTableAdapter
             // 
-            this.positionTableAdapter.ClearBeforeFill = true;
             // 
             // panel1
             // 
@@ -182,7 +175,6 @@
             this.Load += new System.EventHandler(this.Form5_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.positionBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.stariAppDBDataSet5)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
@@ -198,9 +190,7 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label2;
-        private StariAppDBDataSet5 stariAppDBDataSet5;
         private System.Windows.Forms.BindingSource positionBindingSource;
-        private StariAppDBDataSet5TableAdapters.PositionTableAdapter positionTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn positionDataGridViewTextBoxColumn;
         private System.Windows.Forms.Panel panel1;

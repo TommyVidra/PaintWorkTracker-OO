@@ -15,6 +15,9 @@ namespace StariApp
 
         //public static string path = Path.GetDirectoryName(Path.GetDirectoryName(System.IO.Directory.GetCurrentDirectory())) + "\\IVT";
         public static string path = ConfigurationManager.ConnectionStrings["StariApp.Properties.Settings.StariAppDBConnectionString"].ConnectionString;
+
+
+
         public static void addWorker(string name, string lastName, int position)
         {
             int count = workerCount(name, lastName);

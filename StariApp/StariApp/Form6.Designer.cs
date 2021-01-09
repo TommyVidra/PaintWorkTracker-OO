@@ -45,13 +45,10 @@
             this.trajanjeUHDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.imeIPrezimeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.workViewBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.stariAppDBDataSet9 = new StariApp.StariAppDBDataSet9();
-            this.workViewTableAdapter = new StariApp.StariAppDBDataSet9TableAdapters.WorkViewTableAdapter();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.workViewBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.stariAppDBDataSet9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -208,16 +205,12 @@
             // workViewBindingSource
             // 
             this.workViewBindingSource.DataMember = "WorkView";
-            this.workViewBindingSource.DataSource = this.stariAppDBDataSet9;
             // 
             // stariAppDBDataSet9
             // 
-            this.stariAppDBDataSet9.DataSetName = "StariAppDBDataSet9";
-            this.stariAppDBDataSet9.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // workViewTableAdapter
             // 
-            this.workViewTableAdapter.ClearBeforeFill = true;
             // 
             // dataGridView2
             // 
@@ -261,7 +254,6 @@
             this.Load += new System.EventHandler(this.Form6_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.workViewBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.stariAppDBDataSet9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -282,9 +274,7 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private StariAppDBDataSet9 stariAppDBDataSet9;
         private System.Windows.Forms.BindingSource workViewBindingSource;
-        private StariAppDBDataSet9TableAdapters.WorkViewTableAdapter workViewTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn datumDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn trajanjeUHDataGridViewTextBoxColumn;

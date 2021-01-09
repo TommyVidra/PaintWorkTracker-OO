@@ -59,10 +59,6 @@ namespace StariApp
 
         private void Form4_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'stariAppDBDataSet3.NoteView' table. You can move, or remove it, as needed.
-            this.noteViewTableAdapter.Fill(this.stariAppDBDataSet3.NoteView);
-            // TODO: This line of code loads data into the 'stariAppDBDataSet1.NoteView' table. You can move, or remove it, as needed.
-            //this.noteViewTableAdapter.Fill(this.stariAppDBDataSet1.NoteView);
 
         }
 

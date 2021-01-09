@@ -190,5 +190,10 @@ namespace StariApp
         {
             this.WindowState = FormWindowState.Minimized;
         }
+
+        private void chromosLinkOppen(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://www.chromos-svjetlost.hr/hr/");
+        }
     }
 }

@@ -364,6 +364,12 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="slideshow\Image0.jpg" />
+    <Content Include="slideshow\Image1.jpg" />
+    <Content Include="slideshow\Image2.jpg" />
+    <Content Include="slideshow\Image3.jpg" />
+    <Content Include="slideshow\Image4.jpg" />
+    <Content Include="slideshow\Image5.jpg" />
     <Content Include="StariAppDB.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

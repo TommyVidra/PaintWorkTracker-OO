@@ -8,12 +8,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Timers;
+using System.Configuration;
 
 namespace StariApp
 {
     public partial class form1 : Form
     {
-        
+        private int imageCounter = 0;
+        private System.Windows.Forms.Timer SlideShowTimer = new System.Windows.Forms.Timer();
+        private string slideshowPath = Path.Combine(Directory.GetParent(System.IO.Directory.GetCurrentDirectory()).FullName, "slideshow");
+        private int progressBarValue = 10;
+        private System.Windows.Forms.Timer ProgressBarTimer = new System.Windows.Forms.Timer();
+
         public form1()
         {
             InitializeComponent();
@@ -21,8 +28,32 @@ namespace StariApp
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'stariAppDBDataSet6.EventsView' table. You can move, or remove it, as needed.
-            //this.eventsViewTableAdapter.Fill(this.stariAppDBDataSet6.EventsView);
+            SlideShowTimer.Interval = 3500;
+            progressBar.Visible = false;
+            dataTable.Visible = false;
+            pictureSlide.ImageLocation = string.Format("{0}\\Image{1}.jpg", slideshowPath, imageCounter);
+            SlideShowTimer.Tick += new EventHandler(OnTimedEventPictureSlide);
+            SlideShowTimer.Enabled = true;
+        }
+
+        private void OnTimedEventPictureSlide(Object source, EventArgs e)
+        {
+            imageCounter += 1;
+            if (imageCounter == 6) imageCounter = 0;
+            pictureSlide.ImageLocation = string.Format("{0}\\Image{1}.jpg", slideshowPath, imageCounter);
+        }
+
+        private void OnTimedEventProgresBar(Object source, EventArgs e)
+        {            
+            if (progressBar.Value == 100)
+            {
+                progressBar.Visible = false;
+                ProgressBarTimer.Enabled = false;
+                progressBar.Value = 0;
+
+                dataTable.Visible = true;
+            }
+            else this.progressBar.Value += progressBarValue;
 
         }
 
@@ -40,13 +71,6 @@ namespace StariApp
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            Form2 form2 = new Form2();
-            form2.Show();
 
         }
 
@@ -194,6 +218,23 @@ namespace StariApp
         private void chromosLinkOppen(object sender, EventArgs e)
         {
             System.Diagnostics.Process.Start("https://www.chromos-svjetlost.hr/hr/");
+        }
+
+        private void workerButton_Click(object sender, EventArgs e)
+        {
+            SlideShowTimer.Enabled = false;
+            title.Text = "Popis Radnika";
+            pictureSlide.Visible = false;
+            progressBar.Visible = true;
+
+            ProgressBarTimer.Interval = 200;
+            ProgressBarTimer.Tick += new EventHandler(OnTimedEventProgresBar);
+            ProgressBarTimer.Enabled = true;
+        }
+
+        private void pictureSlide_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://www.chromos-svjetlost.hr/hr/industrija");
         }
     }
 }

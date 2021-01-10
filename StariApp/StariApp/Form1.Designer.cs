@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(form1));
-            this.button1 = new System.Windows.Forms.Button();
+            this.workerButton = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
@@ -40,37 +40,45 @@
             this.button6 = new System.Windows.Forms.Button();
             this.eventsViewBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
-            this.label1 = new System.Windows.Forms.Label();
+            this.title = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.minimizeButton = new System.Windows.Forms.Button();
             this.closeButton = new System.Windows.Forms.Button();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.progressBar = new System.Windows.Forms.ProgressBar();
+            this.pictureSlide = new System.Windows.Forms.PictureBox();
+            this.dataTable = new System.Windows.Forms.DataGridView();
+            this.panel3 = new System.Windows.Forms.Panel();
             this.gradientPanel1 = new StariApp.GradientPanel();
             this.gradientPanel2 = new StariApp.GradientPanel();
             ((System.ComponentModel.ISupportInitialize)(this.eventsViewBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureSlide)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataTable)).BeginInit();
             this.SuspendLayout();
             // 
-            // button1
+            // workerButton
             // 
-            this.button1.BackColor = System.Drawing.Color.SteelBlue;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(233)))), ((int)(((byte)(242)))));
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button1.Location = new System.Drawing.Point(0, 540);
-            this.button1.Name = "button1";
-            this.button1.Padding = new System.Windows.Forms.Padding(0, 8, 0, 0);
-            this.button1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.button1.Size = new System.Drawing.Size(150, 140);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Zaposlenici";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.workerButton.BackColor = System.Drawing.Color.SteelBlue;
+            this.workerButton.FlatAppearance.BorderSize = 0;
+            this.workerButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.workerButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.workerButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(233)))), ((int)(((byte)(242)))));
+            this.workerButton.Image = ((System.Drawing.Image)(resources.GetObject("workerButton.Image")));
+            this.workerButton.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.workerButton.Location = new System.Drawing.Point(0, 540);
+            this.workerButton.Name = "workerButton";
+            this.workerButton.Padding = new System.Windows.Forms.Padding(0, 8, 0, 0);
+            this.workerButton.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.workerButton.Size = new System.Drawing.Size(150, 140);
+            this.workerButton.TabIndex = 0;
+            this.workerButton.Text = "Zaposlenici";
+            this.workerButton.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.workerButton.UseVisualStyleBackColor = false;
+            this.workerButton.Click += new System.EventHandler(this.workerButton_Click);
             // 
             // button2
             // 
@@ -212,25 +220,25 @@
             // 
             this.eventsViewBindingSource.DataMember = "EventsView";
             // 
-            // label1
+            // title
             // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 20.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(27)))), ((int)(((byte)(29)))));
-            this.label1.Location = new System.Drawing.Point(12, 86);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(95, 32);
-            this.label1.TabIndex = 10;
-            this.label1.Text = "label1";
+            this.title.AutoSize = true;
+            this.title.BackColor = System.Drawing.Color.Transparent;
+            this.title.Font = new System.Drawing.Font("Century Gothic", 20.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.title.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(27)))), ((int)(((byte)(29)))));
+            this.title.Location = new System.Drawing.Point(12, 75);
+            this.title.Name = "title";
+            this.title.Size = new System.Drawing.Size(153, 32);
+            this.title.TabIndex = 10;
+            this.title.Text = "WORK APP";
             // 
             // pictureBox1
             // 
             this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(0, 423);
+            this.pictureBox1.Location = new System.Drawing.Point(12, 423);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(202, 111);
+            this.pictureBox1.Size = new System.Drawing.Size(189, 110);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 11;
             this.pictureBox1.TabStop = false;
@@ -273,12 +281,58 @@
             this.closeButton.UseVisualStyleBackColor = true;
             this.closeButton.Click += new System.EventHandler(this.closeButton_Click);
             // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.progressBar);
+            this.panel2.Controls.Add(this.dataTable);
+            this.panel2.Controls.Add(this.pictureSlide);
+            this.panel2.Location = new System.Drawing.Point(207, 75);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1022, 458);
+            this.panel2.TabIndex = 13;
+            // 
+            // progressBar
+            // 
+            this.progressBar.Location = new System.Drawing.Point(261, 423);
+            this.progressBar.Name = "progressBar";
+            this.progressBar.Size = new System.Drawing.Size(462, 23);
+            this.progressBar.TabIndex = 1;
+            this.progressBar.UseWaitCursor = true;
+            this.progressBar.Visible = false;
+            // 
+            // pictureSlide
+            // 
+            this.pictureSlide.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureSlide.Location = new System.Drawing.Point(0, 0);
+            this.pictureSlide.Name = "pictureSlide";
+            this.pictureSlide.Size = new System.Drawing.Size(1022, 458);
+            this.pictureSlide.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureSlide.TabIndex = 0;
+            this.pictureSlide.TabStop = false;
+            this.pictureSlide.Click += new System.EventHandler(this.pictureSlide_Click);
+            // 
+            // dataTable
+            // 
+            this.dataTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataTable.Location = new System.Drawing.Point(369, 14);
+            this.dataTable.Name = "dataTable";
+            this.dataTable.Size = new System.Drawing.Size(650, 432);
+            this.dataTable.TabIndex = 2;
+            // 
+            // panel3
+            // 
+            this.panel3.Location = new System.Drawing.Point(12, 120);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(189, 297);
+            this.panel3.TabIndex = 14;
+            // 
             // gradientPanel1
             // 
             this.gradientPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.gradientPanel1.Angle = 0F;
             this.gradientPanel1.AutoSize = true;
+            this.gradientPanel1.Cursor = System.Windows.Forms.Cursors.SizeAll;
             this.gradientPanel1.FirstColor = System.Drawing.Color.SteelBlue;
             this.gradientPanel1.Location = new System.Drawing.Point(0, -1);
             this.gradientPanel1.Name = "gradientPanel1";
@@ -308,16 +362,18 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(220)))), ((int)(((byte)(225)))));
             this.ClientSize = new System.Drawing.Size(1241, 678);
             this.ControlBox = false;
+            this.Controls.Add(this.panel3);
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.title);
             this.Controls.Add(this.button7);
             this.Controls.Add(this.button6);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.workerButton);
             this.Controls.Add(this.button8);
             this.Controls.Add(this.gradientPanel1);
             this.Controls.Add(this.gradientPanel2);
@@ -333,6 +389,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.eventsViewBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureSlide)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataTable)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -340,7 +399,7 @@
 
         #endregion
         private System.Windows.Forms.BindingSource eventsViewBindingSource;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button workerButton;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button3;
@@ -351,11 +410,16 @@
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
         private GradientPanel gradientPanel2;
         private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label title;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button closeButton;
         private System.Windows.Forms.Button minimizeButton;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.PictureBox pictureSlide;
+        private System.Windows.Forms.ProgressBar progressBar;
+        private System.Windows.Forms.DataGridView dataTable;
     }
 }
 

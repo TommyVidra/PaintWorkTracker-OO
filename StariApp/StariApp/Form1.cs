@@ -11,6 +11,7 @@ using System.Windows.Forms;
 using System.Timers;
 using System.Configuration;
 using static StariApp.DataConfigs;
+using System.Threading;
 
 namespace StariApp
 {
@@ -19,7 +20,8 @@ namespace StariApp
         private DataClass CurrentData = DataClass.None;
         private int imageCounter = 0;
         private string slideshowPath = Path.Combine(Directory.GetParent(System.IO.Directory.GetCurrentDirectory()).FullName, "slideshow");
-        private int progressBarValue = 10;
+        private int value = 0;
+        private string loadingText = "";
 
         private System.Windows.Forms.Timer ProgressBarTimer = new System.Windows.Forms.Timer();
         private System.Windows.Forms.Timer SlideShowTimer = new System.Windows.Forms.Timer();
@@ -32,13 +34,16 @@ namespace StariApp
         {
             InitializeComponent();
 
+            ProgressBarTimer.Interval = 10;
+            SlideShowTimer.Interval = 3500;
+
             ListOfButtons.Add(workerButton);
             ListOfButtons.Add(resourceButton);
+            ListOfButtons.Add(positionsButton);
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            SlideShowTimer.Interval = 3500;
             progressBar.Visible = false;
             dataTable.Visible = false;
 
@@ -56,8 +61,11 @@ namespace StariApp
 
         private void OnTimedEventProgresBar(Object source, EventArgs e)
         {
+
+            loadingLabel.Text = string.Format("Učitavanje svih {0}... {1}%", loadingText, progressBar.Value);
             if (progressBar.Value == 100)
             {
+
                 ProgressBarTimer.Tick -= new EventHandler(OnTimedEventProgresBar);
                 ProgressBarTimer.Enabled = false;
 
@@ -71,8 +79,27 @@ namespace StariApp
                 exportButton.Visible = true;
                 dataTable.Visible = true;
 
+                addButton.Visible = true;
+
+                if (ProgressBarTimer.Interval <= 6) ProgressBarTimer.Interval = 6;
+                else ProgressBarTimer.Interval -= 1;
+                value = 0;
+
             }
-            else progressBar.PerformStep();
+            else 
+            {
+                value = (value + 1);
+                Invoke((MethodInvoker)delegate ()
+                {
+                    if (value >= 100) progressBar.Value = 100;
+
+                    else 
+                    {
+                        progressBar.Value = value;
+                        progressBar.Value -= 1;
+                    }
+                });
+            } 
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -143,8 +170,8 @@ namespace StariApp
 
             if(e.Button == MouseButtons.Left)
             {
-                this.Left += e.X - lastPoint.X;
-                this.Top += e.Y - lastPoint.Y;
+                Left += e.X - lastPoint.X;
+                Top += e.Y - lastPoint.Y;
             }
         }
 
@@ -155,14 +182,13 @@ namespace StariApp
 
         private void closeButton_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Do you want to close the application?", "My Application",
-            MessageBoxButtons.YesNo) == DialogResult.Yes)
-                System.Windows.Forms.Application.Exit();
+            if (MessageBox.Show("Do you want to close the application?", "Work App", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                Application.Exit();
         }
 
         private void minimizeButton_Click(object sender, EventArgs e)
         {
-            this.WindowState = FormWindowState.Minimized;
+            WindowState = FormWindowState.Minimized;
         }
 
         private void workerButton_Click(object sender, EventArgs e)
@@ -172,15 +198,11 @@ namespace StariApp
 
             if (!CurrentData.Equals(DataClass.Worker))
             {
-                defineStartingVisablity(DataClass.Worker, "Zaposlenika");
+                loadingText = "Zaposlenika";
+                defineStartingVisablity(DataClass.Worker);
                 lastColorButton = workerButton.BackColor;
                 workerButton.BackColor = buttonSelected;
             }
-        }
-
-        private void pictureSlide_Click(object sender, EventArgs e)
-        {
-            System.Diagnostics.Process.Start("https://www.chromos-svjetlost.hr/hr/industrija");
         }
 
         private void resourceButton_Click(object sender, EventArgs e)
@@ -190,16 +212,34 @@ namespace StariApp
 
             if (!CurrentData.Equals(DataClass.Resource))
             {
-                defineStartingVisablity(DataClass.Resource, "Resursa");
+                loadingText = "Resursa";
+                defineStartingVisablity(DataClass.Resource);
                 lastColorButton = resourceButton.BackColor;
                 resourceButton.BackColor = buttonSelected;
             }
         }
 
-        private void defineStartingVisablity(DataClass data, string loadingText)
+        private void positionsButton_Click(object sender, EventArgs e)
+        {
+
+            title.Text = "Popis Pozicija";
+            dataTable.DataSource = Connection.ListPositions();
+
+            if (!CurrentData.Equals(DataClass.Position))
+            {
+                loadingText = "Pozicija";
+                defineStartingVisablity(DataClass.Position);
+                lastColorButton = positionsButton.BackColor;
+                positionsButton.BackColor = buttonSelected;
+            }
+
+        }
+
+        private void defineStartingVisablity(DataClass data)
         {
             returnToOriginalColor();
 
+            title.Visible = true;
             SlideShowTimer.Enabled = false;
             pictureSlide.Visible = false;
 
@@ -207,13 +247,10 @@ namespace StariApp
             dataTable.Visible = false;
             exportButton.Visible = false;
 
-            loadingLabel.Text = string.Format("Učitavanje {0}...", loadingText);
-            loadingLabel.Visible = true;
-
             progressBar.Visible = true;
-            ProgressBarTimer.Interval = 100;
             ProgressBarTimer.Tick += new EventHandler(OnTimedEventProgresBar);
             ProgressBarTimer.Enabled = true;
+            loadingLabel.Visible = true;
         }
 
         private void returnToOriginalColor()
@@ -224,6 +261,7 @@ namespace StariApp
                     button.BackColor = lastColorButton;
             }
         }
+
         private void exportButton_Click(object sender, EventArgs e)
         {
             StringBuilder sb = new StringBuilder();
@@ -239,7 +277,6 @@ namespace StariApp
             }
 
             saveFileDialog.Filter = "CSV documents|*.csv";
-            saveFileDialog.ShowDialog();
 
             if (saveFileDialog.ShowDialog() == DialogResult.OK)
             {
@@ -248,6 +285,20 @@ namespace StariApp
                     file.WriteLine(line, Encoding.UTF8);
                 file.Close();
             }
+        }
+
+        private void pictureSlide_Click(object sender, EventArgs e) 
+        { 
+            System.Diagnostics.Process.Start("https://www.chromos-svjetlost.hr/hr/industrija"); 
+        }
+
+        private void addButton_Click(object sender, EventArgs e)
+        {
+            saveButton.Visible = true;
+            cancelButton.Visible = true;
+
+            InputBox input = new InputBox(CurrentData);
+            input.Show();
         }
     }
 }

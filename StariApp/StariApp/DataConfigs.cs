@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace StariApp
 {
-    class DataConfigs
+    public class DataConfigs
     {
 
         public enum DataClass

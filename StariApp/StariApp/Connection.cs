@@ -22,7 +22,6 @@ namespace StariApp
         }
 
         private static WorkContext context = new WorkContext();
-        //public static string path = Path.GetDirectoryName(Path.GetDirectoryName(System.IO.Directory.GetCurrentDirectory())) + "\\IVT";
         public static string path = ConfigurationManager.ConnectionStrings["StariApp.Properties.Settings.StariAppDBConnectionString"].ConnectionString;
 
         public static List<WorkerView> ListWorkers() 
@@ -42,6 +41,8 @@ namespace StariApp
 
             return Data;
         }
+
+        public static List<Position> ListPositions() { return (from s in context.Positions orderby s.Id select s).ToList<Position>(); }
 
         public static List<Resource> ListResources() { return (from s in context.Resources orderby s.Id select s).ToList<Resource>(); }
 

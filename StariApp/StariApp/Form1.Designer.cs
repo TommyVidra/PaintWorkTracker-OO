@@ -34,7 +34,7 @@
             this.workerButton = new System.Windows.Forms.Button();
             this.resourceButton = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.positionsButton = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.exportButton = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
@@ -50,6 +50,9 @@
             this.progressBar = new System.Windows.Forms.ProgressBar();
             this.dataTable = new System.Windows.Forms.DataGridView();
             this.pictureSlide = new System.Windows.Forms.PictureBox();
+            this.addButton = new System.Windows.Forms.Button();
+            this.saveButton = new System.Windows.Forms.Button();
+            this.cancelButton = new System.Windows.Forms.Button();
             this.gradientPanel1 = new StariApp.GradientPanel();
             ((System.ComponentModel.ISupportInitialize)(this.eventsViewBindingSource)).BeginInit();
             this.panel1.SuspendLayout();
@@ -117,24 +120,24 @@
             this.button4.UseVisualStyleBackColor = false;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
-            // button3
+            // positionsButton
             // 
-            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(111)))), ((int)(((byte)(152)))));
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.button3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(233)))), ((int)(((byte)(242)))));
-            this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
-            this.button3.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
-            this.button3.Location = new System.Drawing.Point(0, 200);
-            this.button3.Name = "button3";
-            this.button3.Padding = new System.Windows.Forms.Padding(0, 8, 0, 0);
-            this.button3.Size = new System.Drawing.Size(250, 100);
-            this.button3.TabIndex = 3;
-            this.button3.Text = "Pozicije";
-            this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button3.UseVisualStyleBackColor = false;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.positionsButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(111)))), ((int)(((byte)(152)))));
+            this.positionsButton.FlatAppearance.BorderSize = 0;
+            this.positionsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.positionsButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.positionsButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(233)))), ((int)(((byte)(242)))));
+            this.positionsButton.Image = ((System.Drawing.Image)(resources.GetObject("positionsButton.Image")));
+            this.positionsButton.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.positionsButton.Location = new System.Drawing.Point(0, 200);
+            this.positionsButton.Name = "positionsButton";
+            this.positionsButton.Padding = new System.Windows.Forms.Padding(0, 8, 0, 0);
+            this.positionsButton.Size = new System.Drawing.Size(250, 100);
+            this.positionsButton.TabIndex = 3;
+            this.positionsButton.Text = "Pozicije";
+            this.positionsButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.positionsButton.UseVisualStyleBackColor = false;
+            this.positionsButton.Click += new System.EventHandler(this.positionsButton_Click);
             // 
             // button5
             // 
@@ -169,7 +172,7 @@
             this.exportButton.Name = "exportButton";
             this.exportButton.Padding = new System.Windows.Forms.Padding(0, 8, 0, 0);
             this.exportButton.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.exportButton.Size = new System.Drawing.Size(133, 135);
+            this.exportButton.Size = new System.Drawing.Size(135, 135);
             this.exportButton.TabIndex = 8;
             this.exportButton.Text = "Export to CSV";
             this.exportButton.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -229,11 +232,12 @@
             this.title.BackColor = System.Drawing.Color.Transparent;
             this.title.Font = new System.Drawing.Font("Century Gothic", 20.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.title.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(27)))), ((int)(((byte)(29)))));
-            this.title.Location = new System.Drawing.Point(256, 103);
+            this.title.Location = new System.Drawing.Point(14, 15);
             this.title.Name = "title";
             this.title.Size = new System.Drawing.Size(153, 32);
             this.title.TabIndex = 10;
             this.title.Text = "WORK APP";
+            this.title.Visible = false;
             // 
             // panel1
             // 
@@ -274,6 +278,10 @@
             // 
             // mainContainer
             // 
+            this.mainContainer.Controls.Add(this.title);
+            this.mainContainer.Controls.Add(this.cancelButton);
+            this.mainContainer.Controls.Add(this.saveButton);
+            this.mainContainer.Controls.Add(this.addButton);
             this.mainContainer.Controls.Add(this.exportButton);
             this.mainContainer.Controls.Add(this.loadingLabel);
             this.mainContainer.Controls.Add(this.progressBar);
@@ -289,7 +297,7 @@
             this.loadingLabel.AutoSize = true;
             this.loadingLabel.BackColor = System.Drawing.Color.Transparent;
             this.loadingLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.loadingLabel.Location = new System.Drawing.Point(312, 262);
+            this.loadingLabel.Location = new System.Drawing.Point(290, 267);
             this.loadingLabel.Name = "loadingLabel";
             this.loadingLabel.Size = new System.Drawing.Size(70, 24);
             this.loadingLabel.TabIndex = 3;
@@ -302,7 +310,7 @@
             this.progressBar.Location = new System.Drawing.Point(185, 302);
             this.progressBar.Name = "progressBar";
             this.progressBar.Size = new System.Drawing.Size(462, 23);
-            this.progressBar.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
+            this.progressBar.Style = System.Windows.Forms.ProgressBarStyle.Marquee;
             this.progressBar.TabIndex = 1;
             this.progressBar.UseWaitCursor = true;
             this.progressBar.Visible = false;
@@ -318,9 +326,9 @@
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Honeydew;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dataTable.DefaultCellStyle = dataGridViewCellStyle1;
-            this.dataTable.Location = new System.Drawing.Point(185, 15);
+            this.dataTable.Location = new System.Drawing.Point(256, 15);
             this.dataTable.Name = "dataTable";
-            this.dataTable.Size = new System.Drawing.Size(760, 510);
+            this.dataTable.Size = new System.Drawing.Size(689, 510);
             this.dataTable.TabIndex = 2;
             // 
             // pictureSlide
@@ -334,6 +342,52 @@
             this.pictureSlide.TabIndex = 0;
             this.pictureSlide.TabStop = false;
             this.pictureSlide.Click += new System.EventHandler(this.pictureSlide_Click);
+            // 
+            // addButton
+            // 
+            this.addButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(141)))), ((int)(((byte)(87)))));
+            this.addButton.FlatAppearance.BorderSize = 0;
+            this.addButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.addButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.addButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(233)))), ((int)(((byte)(242)))));
+            this.addButton.Location = new System.Drawing.Point(20, 349);
+            this.addButton.Name = "addButton";
+            this.addButton.Size = new System.Drawing.Size(135, 35);
+            this.addButton.TabIndex = 9;
+            this.addButton.Text = "Add";
+            this.addButton.UseVisualStyleBackColor = false;
+            this.addButton.Visible = false;
+            this.addButton.Click += new System.EventHandler(this.addButton_Click);
+            // 
+            // saveButton
+            // 
+            this.saveButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(141)))), ((int)(((byte)(87)))));
+            this.saveButton.FlatAppearance.BorderSize = 0;
+            this.saveButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.saveButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.saveButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(233)))), ((int)(((byte)(242)))));
+            this.saveButton.Location = new System.Drawing.Point(20, 267);
+            this.saveButton.Name = "saveButton";
+            this.saveButton.Size = new System.Drawing.Size(135, 35);
+            this.saveButton.TabIndex = 10;
+            this.saveButton.Text = "Save";
+            this.saveButton.UseVisualStyleBackColor = false;
+            this.saveButton.Visible = false;
+            // 
+            // cancelButton
+            // 
+            this.cancelButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(100)))), ((int)(((byte)(150)))));
+            this.cancelButton.FlatAppearance.BorderSize = 0;
+            this.cancelButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cancelButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.cancelButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(233)))), ((int)(((byte)(242)))));
+            this.cancelButton.Location = new System.Drawing.Point(20, 308);
+            this.cancelButton.Name = "cancelButton";
+            this.cancelButton.Size = new System.Drawing.Size(135, 35);
+            this.cancelButton.TabIndex = 11;
+            this.cancelButton.Text = "Cancel";
+            this.cancelButton.UseVisualStyleBackColor = false;
+            this.cancelButton.Visible = false;
             // 
             // gradientPanel1
             // 
@@ -356,16 +410,15 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(220)))), ((int)(((byte)(225)))));
-            this.ClientSize = new System.Drawing.Size(1241, 701);
+            this.ClientSize = new System.Drawing.Size(1241, 698);
             this.ControlBox = false;
-            this.Controls.Add(this.title);
             this.Controls.Add(this.mainContainer);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.button7);
             this.Controls.Add(this.button6);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
+            this.Controls.Add(this.positionsButton);
             this.Controls.Add(this.resourceButton);
             this.Controls.Add(this.workerButton);
             this.Controls.Add(this.gradientPanel1);
@@ -394,7 +447,7 @@
         private System.Windows.Forms.Button workerButton;
         private System.Windows.Forms.Button resourceButton;
         private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button positionsButton;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button7;
@@ -410,6 +463,9 @@
         private System.Windows.Forms.ProgressBar progressBar;
         private System.Windows.Forms.DataGridView dataTable;
         private System.Windows.Forms.Label loadingLabel;
+        private System.Windows.Forms.Button addButton;
+        private System.Windows.Forms.Button saveButton;
+        private System.Windows.Forms.Button cancelButton;
     }
 }
 

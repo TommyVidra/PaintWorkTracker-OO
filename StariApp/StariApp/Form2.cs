@@ -9,72 +9,66 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static StariApp.DataConfigs;
 
 namespace StariApp
 {
-    public partial class Form2 : Form
+    public partial class InputBox : Form
     {
-        public string name;
-        public string lastName;
-        public string position;
-
-        public Form2()
+        public InputBox(DataClass dataClass)
         {
             InitializeComponent();
+            switch(dataClass)
+            {
+                case DataClass.Worker:
+                    label1.Text = "Ime";
+                    label2.Text = "Prezime";
+                    label3.Text = "Pozicija";
+
+                    textBox1.Tag = "string";
+                    textBox2.Tag = "string";
+                    textBox3.Tag = "string";
+
+                    label4.Visible = false;
+                    label5.Visible = false;
+                    label6.Visible = false;
+                    textBox4.Visible = false;
+                    textBox5.Visible = false;
+                    dateTimePicker.Visible = false;
+                    break;
+
+                case DataClass.Resource:
+                    label1.Text = "Resurs";
+                    label2.Text = "Cijena po metrici";
+                    label3.Text = "Količina";
+                    label4.Text = "Metrika";
+
+                    textBox1.Tag = "string";
+                    textBox2.Tag = "double";
+                    textBox3.Tag = "double";
+                    textBox4.Tag = "string";
+
+                    label5.Visible = false;
+                    label6.Visible = false;
+                    textBox5.Visible = false;
+                    dateTimePicker.Visible = false;
+                    break;
+            }
         }
 
         private void Form2_Load(object sender, EventArgs e)
         {
-            DataTable WorkerTabel = new DataTable();
-
-            WorkerTabel.Columns.Add("Id", typeof(int));
-
-            dataGridView1.DataSource = WorkerTabel;
+        }
+        private void closeButton_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Do you want to close the input window?", "Input Window", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                this.Close();
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
+        private void cancleButton_Click(object sender, EventArgs e)
         {
-            TextBox temp = (TextBox)sender;
-            name = temp.Text;
-        }
-
-        private void textBox2_TextChanged(object sender, EventArgs e)
-        {
-            TextBox temp = (TextBox)sender;
-            lastName = temp.Text;
-        }
-
-        private void textBox3_TextChanged(object sender, EventArgs e)
-        {
-            TextBox temp = (TextBox)sender;
-            position = temp.Text;
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            Connection.addWorker(name, lastName, int.Parse(position));
-            MessageBox.Show("Zaposlenik uspješno unesen");
-            DisplayData();
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            Connection.removeWorker(name, lastName);
-            MessageBox.Show("Zaposlenik uspješno izbrisan");
-            DisplayData();
-        }
-
-        private void DisplayData()
-        {
-
-            SqlConnection con = new SqlConnection(Connection.path);
-            con.Open();
-            SqlDataAdapter adapt;
-            DataTable dt = new DataTable();
-            adapt = new SqlDataAdapter("select * from WorkerView", con);
-            adapt.Fill(dt);
-            dataGridView1.DataSource = dt;
-            con.Close();
+            if (MessageBox.Show("Do you want to close the input window?", "Input Window", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                this.Close();
         }
     }
 }

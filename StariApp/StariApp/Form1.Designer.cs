@@ -30,34 +30,32 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(form1));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.workerButton = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.resourceButton = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
+            this.exportButton = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.eventsViewBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
+            this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
             this.title = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.minimizeButton = new System.Windows.Forms.Button();
             this.closeButton = new System.Windows.Forms.Button();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.mainContainer = new System.Windows.Forms.Panel();
+            this.loadingLabel = new System.Windows.Forms.Label();
             this.progressBar = new System.Windows.Forms.ProgressBar();
-            this.pictureSlide = new System.Windows.Forms.PictureBox();
             this.dataTable = new System.Windows.Forms.DataGridView();
-            this.panel3 = new System.Windows.Forms.Panel();
+            this.pictureSlide = new System.Windows.Forms.PictureBox();
             this.gradientPanel1 = new StariApp.GradientPanel();
-            this.gradientPanel2 = new StariApp.GradientPanel();
             ((System.ComponentModel.ISupportInitialize)(this.eventsViewBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureSlide)).BeginInit();
+            this.mainContainer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataTable)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureSlide)).BeginInit();
             this.SuspendLayout();
             // 
             // workerButton
@@ -68,36 +66,36 @@
             this.workerButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.workerButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(233)))), ((int)(((byte)(242)))));
             this.workerButton.Image = ((System.Drawing.Image)(resources.GetObject("workerButton.Image")));
-            this.workerButton.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.workerButton.Location = new System.Drawing.Point(0, 540);
+            this.workerButton.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.workerButton.Location = new System.Drawing.Point(0, 0);
             this.workerButton.Name = "workerButton";
             this.workerButton.Padding = new System.Windows.Forms.Padding(0, 8, 0, 0);
             this.workerButton.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.workerButton.Size = new System.Drawing.Size(150, 140);
+            this.workerButton.Size = new System.Drawing.Size(250, 100);
             this.workerButton.TabIndex = 0;
             this.workerButton.Text = "Zaposlenici";
-            this.workerButton.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.workerButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.workerButton.UseVisualStyleBackColor = false;
             this.workerButton.Click += new System.EventHandler(this.workerButton_Click);
             // 
-            // button2
+            // resourceButton
             // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(120)))), ((int)(((byte)(166)))));
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.button2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(233)))), ((int)(((byte)(242)))));
-            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
-            this.button2.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button2.Location = new System.Drawing.Point(156, 540);
-            this.button2.Name = "button2";
-            this.button2.Padding = new System.Windows.Forms.Padding(0, 8, 0, 0);
-            this.button2.Size = new System.Drawing.Size(150, 140);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "Resursi";
-            this.button2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.resourceButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(120)))), ((int)(((byte)(166)))));
+            this.resourceButton.FlatAppearance.BorderSize = 0;
+            this.resourceButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.resourceButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.resourceButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(233)))), ((int)(((byte)(242)))));
+            this.resourceButton.Image = ((System.Drawing.Image)(resources.GetObject("resourceButton.Image")));
+            this.resourceButton.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.resourceButton.Location = new System.Drawing.Point(0, 100);
+            this.resourceButton.Name = "resourceButton";
+            this.resourceButton.Padding = new System.Windows.Forms.Padding(0, 8, 0, 0);
+            this.resourceButton.Size = new System.Drawing.Size(250, 100);
+            this.resourceButton.TabIndex = 1;
+            this.resourceButton.Text = "Resursi";
+            this.resourceButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.resourceButton.UseVisualStyleBackColor = false;
+            this.resourceButton.Click += new System.EventHandler(this.resourceButton_Click);
             // 
             // button4
             // 
@@ -107,15 +105,15 @@
             this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.button4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(233)))), ((int)(((byte)(242)))));
             this.button4.Image = ((System.Drawing.Image)(resources.GetObject("button4.Image")));
-            this.button4.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button4.Location = new System.Drawing.Point(468, 540);
+            this.button4.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.button4.Location = new System.Drawing.Point(0, 300);
             this.button4.Name = "button4";
             this.button4.Padding = new System.Windows.Forms.Padding(0, 8, 0, 2);
             this.button4.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.button4.Size = new System.Drawing.Size(150, 140);
+            this.button4.Size = new System.Drawing.Size(250, 100);
             this.button4.TabIndex = 2;
             this.button4.Text = "Napomene";
-            this.button4.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.button4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button4.UseVisualStyleBackColor = false;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
@@ -127,14 +125,14 @@
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.button3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(233)))), ((int)(((byte)(242)))));
             this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
-            this.button3.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button3.Location = new System.Drawing.Point(312, 540);
+            this.button3.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.button3.Location = new System.Drawing.Point(0, 200);
             this.button3.Name = "button3";
             this.button3.Padding = new System.Windows.Forms.Padding(0, 8, 0, 0);
-            this.button3.Size = new System.Drawing.Size(150, 140);
+            this.button3.Size = new System.Drawing.Size(250, 100);
             this.button3.TabIndex = 3;
             this.button3.Text = "Pozicije";
-            this.button3.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
@@ -146,37 +144,38 @@
             this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.button5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(233)))), ((int)(((byte)(242)))));
             this.button5.Image = ((System.Drawing.Image)(resources.GetObject("button5.Image")));
-            this.button5.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button5.Location = new System.Drawing.Point(624, 540);
+            this.button5.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.button5.Location = new System.Drawing.Point(0, 400);
             this.button5.Name = "button5";
             this.button5.Padding = new System.Windows.Forms.Padding(0, 8, 0, 0);
-            this.button5.Size = new System.Drawing.Size(150, 140);
+            this.button5.Size = new System.Drawing.Size(250, 100);
             this.button5.TabIndex = 4;
             this.button5.Text = "Radovi";
-            this.button5.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.button5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button5.UseVisualStyleBackColor = false;
             this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
-            // button8
+            // exportButton
             // 
-            this.button8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(64)))), ((int)(((byte)(86)))));
-            this.button8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.button8.FlatAppearance.BorderSize = 0;
-            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.button8.ForeColor = System.Drawing.Color.White;
-            this.button8.Image = ((System.Drawing.Image)(resources.GetObject("button8.Image")));
-            this.button8.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button8.Location = new System.Drawing.Point(1092, 540);
-            this.button8.Name = "button8";
-            this.button8.Padding = new System.Windows.Forms.Padding(0, 8, 0, 0);
-            this.button8.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.button8.Size = new System.Drawing.Size(150, 140);
-            this.button8.TabIndex = 8;
-            this.button8.Text = "Export to CSV";
-            this.button8.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button8.UseVisualStyleBackColor = false;
-            this.button8.Click += new System.EventHandler(this.button8_Click);
+            this.exportButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(141)))), ((int)(((byte)(87)))));
+            this.exportButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.exportButton.FlatAppearance.BorderSize = 0;
+            this.exportButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.exportButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.exportButton.ForeColor = System.Drawing.Color.White;
+            this.exportButton.Image = ((System.Drawing.Image)(resources.GetObject("exportButton.Image")));
+            this.exportButton.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.exportButton.Location = new System.Drawing.Point(20, 390);
+            this.exportButton.Name = "exportButton";
+            this.exportButton.Padding = new System.Windows.Forms.Padding(0, 8, 0, 0);
+            this.exportButton.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.exportButton.Size = new System.Drawing.Size(133, 135);
+            this.exportButton.TabIndex = 8;
+            this.exportButton.Text = "Export to CSV";
+            this.exportButton.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.exportButton.UseVisualStyleBackColor = false;
+            this.exportButton.Visible = false;
+            this.exportButton.Click += new System.EventHandler(this.exportButton_Click);
             // 
             // button7
             // 
@@ -186,14 +185,14 @@
             this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.button7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(233)))), ((int)(((byte)(242)))));
             this.button7.Image = ((System.Drawing.Image)(resources.GetObject("button7.Image")));
-            this.button7.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button7.Location = new System.Drawing.Point(936, 540);
+            this.button7.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.button7.Location = new System.Drawing.Point(0, 600);
             this.button7.Name = "button7";
             this.button7.Padding = new System.Windows.Forms.Padding(0, 8, 0, 0);
-            this.button7.Size = new System.Drawing.Size(150, 140);
+            this.button7.Size = new System.Drawing.Size(250, 100);
             this.button7.TabIndex = 7;
             this.button7.Text = "Period";
-            this.button7.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.button7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button7.UseVisualStyleBackColor = false;
             this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
@@ -205,14 +204,14 @@
             this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.button6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(233)))), ((int)(((byte)(242)))));
             this.button6.Image = ((System.Drawing.Image)(resources.GetObject("button6.Image")));
-            this.button6.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button6.Location = new System.Drawing.Point(780, 540);
+            this.button6.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.button6.Location = new System.Drawing.Point(0, 500);
             this.button6.Name = "button6";
             this.button6.Padding = new System.Windows.Forms.Padding(0, 8, 0, 0);
-            this.button6.Size = new System.Drawing.Size(150, 140);
+            this.button6.Size = new System.Drawing.Size(250, 100);
             this.button6.TabIndex = 5;
             this.button6.Text = "Skladište";
-            this.button6.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.button6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button6.UseVisualStyleBackColor = false;
             this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
@@ -220,29 +219,21 @@
             // 
             this.eventsViewBindingSource.DataMember = "EventsView";
             // 
+            // saveFileDialog
+            // 
+            this.saveFileDialog.DefaultExt = "csv";
+            // 
             // title
             // 
             this.title.AutoSize = true;
             this.title.BackColor = System.Drawing.Color.Transparent;
             this.title.Font = new System.Drawing.Font("Century Gothic", 20.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.title.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(27)))), ((int)(((byte)(29)))));
-            this.title.Location = new System.Drawing.Point(12, 75);
+            this.title.Location = new System.Drawing.Point(256, 103);
             this.title.Name = "title";
             this.title.Size = new System.Drawing.Size(153, 32);
             this.title.TabIndex = 10;
             this.title.Text = "WORK APP";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(12, 423);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(189, 110);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 11;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.chromosLinkOppen);
             // 
             // panel1
             // 
@@ -252,9 +243,9 @@
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(64)))), ((int)(((byte)(86)))));
             this.panel1.Controls.Add(this.minimizeButton);
             this.panel1.Controls.Add(this.closeButton);
-            this.panel1.Location = new System.Drawing.Point(1193, -1);
+            this.panel1.Location = new System.Drawing.Point(1196, -1);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(49, 70);
+            this.panel1.Size = new System.Drawing.Size(46, 101);
             this.panel1.TabIndex = 12;
             // 
             // minimizeButton
@@ -262,7 +253,7 @@
             this.minimizeButton.FlatAppearance.BorderSize = 0;
             this.minimizeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.minimizeButton.Image = ((System.Drawing.Image)(resources.GetObject("minimizeButton.Image")));
-            this.minimizeButton.Location = new System.Drawing.Point(11, 39);
+            this.minimizeButton.Location = new System.Drawing.Point(8, 48);
             this.minimizeButton.Name = "minimizeButton";
             this.minimizeButton.Size = new System.Drawing.Size(35, 28);
             this.minimizeButton.TabIndex = 1;
@@ -274,57 +265,75 @@
             this.closeButton.FlatAppearance.BorderSize = 0;
             this.closeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.closeButton.Image = ((System.Drawing.Image)(resources.GetObject("closeButton.Image")));
-            this.closeButton.Location = new System.Drawing.Point(11, 5);
+            this.closeButton.Location = new System.Drawing.Point(8, 13);
             this.closeButton.Name = "closeButton";
             this.closeButton.Size = new System.Drawing.Size(35, 28);
             this.closeButton.TabIndex = 0;
             this.closeButton.UseVisualStyleBackColor = true;
             this.closeButton.Click += new System.EventHandler(this.closeButton_Click);
             // 
-            // panel2
+            // mainContainer
             // 
-            this.panel2.Controls.Add(this.progressBar);
-            this.panel2.Controls.Add(this.dataTable);
-            this.panel2.Controls.Add(this.pictureSlide);
-            this.panel2.Location = new System.Drawing.Point(207, 75);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1022, 458);
-            this.panel2.TabIndex = 13;
+            this.mainContainer.Controls.Add(this.exportButton);
+            this.mainContainer.Controls.Add(this.loadingLabel);
+            this.mainContainer.Controls.Add(this.progressBar);
+            this.mainContainer.Controls.Add(this.dataTable);
+            this.mainContainer.Controls.Add(this.pictureSlide);
+            this.mainContainer.Location = new System.Drawing.Point(256, 151);
+            this.mainContainer.Name = "mainContainer";
+            this.mainContainer.Size = new System.Drawing.Size(973, 538);
+            this.mainContainer.TabIndex = 13;
+            // 
+            // loadingLabel
+            // 
+            this.loadingLabel.AutoSize = true;
+            this.loadingLabel.BackColor = System.Drawing.Color.Transparent;
+            this.loadingLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.loadingLabel.Location = new System.Drawing.Point(312, 262);
+            this.loadingLabel.Name = "loadingLabel";
+            this.loadingLabel.Size = new System.Drawing.Size(70, 24);
+            this.loadingLabel.TabIndex = 3;
+            this.loadingLabel.Text = "Lapsus";
+            this.loadingLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.loadingLabel.Visible = false;
             // 
             // progressBar
             // 
-            this.progressBar.Location = new System.Drawing.Point(261, 423);
+            this.progressBar.Location = new System.Drawing.Point(185, 302);
             this.progressBar.Name = "progressBar";
             this.progressBar.Size = new System.Drawing.Size(462, 23);
+            this.progressBar.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
             this.progressBar.TabIndex = 1;
             this.progressBar.UseWaitCursor = true;
             this.progressBar.Visible = false;
             // 
+            // dataTable
+            // 
+            this.dataTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Honeydew;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataTable.DefaultCellStyle = dataGridViewCellStyle1;
+            this.dataTable.Location = new System.Drawing.Point(185, 15);
+            this.dataTable.Name = "dataTable";
+            this.dataTable.Size = new System.Drawing.Size(760, 510);
+            this.dataTable.TabIndex = 2;
+            // 
             // pictureSlide
             // 
+            this.pictureSlide.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureSlide.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pictureSlide.Location = new System.Drawing.Point(0, 0);
             this.pictureSlide.Name = "pictureSlide";
-            this.pictureSlide.Size = new System.Drawing.Size(1022, 458);
+            this.pictureSlide.Size = new System.Drawing.Size(973, 538);
             this.pictureSlide.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureSlide.TabIndex = 0;
             this.pictureSlide.TabStop = false;
             this.pictureSlide.Click += new System.EventHandler(this.pictureSlide_Click);
-            // 
-            // dataTable
-            // 
-            this.dataTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataTable.Location = new System.Drawing.Point(369, 14);
-            this.dataTable.Name = "dataTable";
-            this.dataTable.Size = new System.Drawing.Size(650, 432);
-            this.dataTable.TabIndex = 2;
-            // 
-            // panel3
-            // 
-            this.panel3.Location = new System.Drawing.Point(12, 120);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(189, 297);
-            this.panel3.TabIndex = 14;
             // 
             // gradientPanel1
             // 
@@ -334,49 +343,32 @@
             this.gradientPanel1.AutoSize = true;
             this.gradientPanel1.Cursor = System.Windows.Forms.Cursors.SizeAll;
             this.gradientPanel1.FirstColor = System.Drawing.Color.SteelBlue;
-            this.gradientPanel1.Location = new System.Drawing.Point(0, -1);
+            this.gradientPanel1.Location = new System.Drawing.Point(249, -1);
             this.gradientPanel1.Name = "gradientPanel1";
             this.gradientPanel1.SecondColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(64)))), ((int)(((byte)(86)))));
-            this.gradientPanel1.Size = new System.Drawing.Size(1201, 70);
+            this.gradientPanel1.Size = new System.Drawing.Size(952, 101);
             this.gradientPanel1.TabIndex = 1;
             this.gradientPanel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.gradientPanel1_MouseDown);
             this.gradientPanel1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.gradientPanel1_MouseMove);
-            // 
-            // gradientPanel2
-            // 
-            this.gradientPanel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.gradientPanel2.Angle = 0F;
-            this.gradientPanel2.AutoSize = true;
-            this.gradientPanel2.FirstColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(148)))), ((int)(((byte)(148)))));
-            this.gradientPanel2.Location = new System.Drawing.Point(0, 540);
-            this.gradientPanel2.Name = "gradientPanel2";
-            this.gradientPanel2.SecondColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(148)))), ((int)(((byte)(148)))));
-            this.gradientPanel2.Size = new System.Drawing.Size(1422, 140);
-            this.gradientPanel2.TabIndex = 9;
             // 
             // form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(220)))), ((int)(((byte)(225)))));
-            this.ClientSize = new System.Drawing.Size(1241, 678);
+            this.ClientSize = new System.Drawing.Size(1241, 701);
             this.ControlBox = false;
-            this.Controls.Add(this.panel3);
-            this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panel1);
-            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.title);
+            this.Controls.Add(this.mainContainer);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.button7);
             this.Controls.Add(this.button6);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.resourceButton);
             this.Controls.Add(this.workerButton);
-            this.Controls.Add(this.button8);
             this.Controls.Add(this.gradientPanel1);
-            this.Controls.Add(this.gradientPanel2);
             this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
@@ -387,11 +379,11 @@
             this.Text = "Program Rada";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.eventsViewBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureSlide)).EndInit();
+            this.mainContainer.ResumeLayout(false);
+            this.mainContainer.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataTable)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureSlide)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -400,26 +392,24 @@
         #endregion
         private System.Windows.Forms.BindingSource eventsViewBindingSource;
         private System.Windows.Forms.Button workerButton;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button resourceButton;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button7;
         private GradientPanel gradientPanel1;
-        private System.Windows.Forms.SaveFileDialog saveFileDialog1;
-        private GradientPanel gradientPanel2;
-        private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog;
+        private System.Windows.Forms.Button exportButton;
         private System.Windows.Forms.Label title;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button closeButton;
         private System.Windows.Forms.Button minimizeButton;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel mainContainer;
         private System.Windows.Forms.PictureBox pictureSlide;
         private System.Windows.Forms.ProgressBar progressBar;
         private System.Windows.Forms.DataGridView dataTable;
+        private System.Windows.Forms.Label loadingLabel;
     }
 }
 

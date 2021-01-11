@@ -254,6 +254,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Connection.cs" />
+    <Compile Include="DataConfigs.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>

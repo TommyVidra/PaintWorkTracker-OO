@@ -13,10 +13,37 @@ namespace StariApp
     class Connection
     {
 
+        public class WorkerView
+        {
+            public int Id { get; set; }
+            public string Ime { get; set; }
+            public string Prezime { get; set; }
+            public string Pozicija { get; set; }
+        }
+
+        private static WorkContext context = new WorkContext();
         //public static string path = Path.GetDirectoryName(Path.GetDirectoryName(System.IO.Directory.GetCurrentDirectory())) + "\\IVT";
         public static string path = ConfigurationManager.ConnectionStrings["StariApp.Properties.Settings.StariAppDBConnectionString"].ConnectionString;
 
+        public static List<WorkerView> ListWorkers() 
+        { 
+            var Data = context.Workers
+                .Join(
+                    context.Positions,
+                    worker => worker.position,
+                    position => position.Id,
+                    (worker, position) => new WorkerView
+                    { 
+                        Id = worker.Id,
+                        Ime = worker.name,
+                        Prezime = worker.lastName,
+                        Pozicija = position.position
+                    }).ToList();
 
+            return Data;
+        }
+
+        public static List<Resource> ListResources() { return (from s in context.Resources orderby s.Id select s).ToList<Resource>(); }
 
         public static void addWorker(string name, string lastName, int position)
         {

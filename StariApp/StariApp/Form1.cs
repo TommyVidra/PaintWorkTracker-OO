@@ -10,20 +10,30 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Timers;
 using System.Configuration;
+using static StariApp.DataConfigs;
 
 namespace StariApp
 {
     public partial class form1 : Form
     {
+        private DataClass CurrentData = DataClass.None;
         private int imageCounter = 0;
-        private System.Windows.Forms.Timer SlideShowTimer = new System.Windows.Forms.Timer();
         private string slideshowPath = Path.Combine(Directory.GetParent(System.IO.Directory.GetCurrentDirectory()).FullName, "slideshow");
         private int progressBarValue = 10;
+
         private System.Windows.Forms.Timer ProgressBarTimer = new System.Windows.Forms.Timer();
+        private System.Windows.Forms.Timer SlideShowTimer = new System.Windows.Forms.Timer();
+
+        private Color lastColorButton = new Color();
+        private Color buttonSelected = Color.FromArgb(145, 100, 150);
+        private List<Button> ListOfButtons = new List<Button>();
 
         public form1()
         {
             InitializeComponent();
+
+            ListOfButtons.Add(workerButton);
+            ListOfButtons.Add(resourceButton);
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -31,6 +41,7 @@ namespace StariApp
             SlideShowTimer.Interval = 3500;
             progressBar.Visible = false;
             dataTable.Visible = false;
+
             pictureSlide.ImageLocation = string.Format("{0}\\Image{1}.jpg", slideshowPath, imageCounter);
             SlideShowTimer.Tick += new EventHandler(OnTimedEventPictureSlide);
             SlideShowTimer.Enabled = true;
@@ -44,17 +55,24 @@ namespace StariApp
         }
 
         private void OnTimedEventProgresBar(Object source, EventArgs e)
-        {            
+        {
             if (progressBar.Value == 100)
             {
+                ProgressBarTimer.Tick -= new EventHandler(OnTimedEventProgresBar);
+                ProgressBarTimer.Enabled = false;
+
+                loadingLabel.Visible = false;
+                loadingLabel.Text = "";
+
                 progressBar.Visible = false;
                 ProgressBarTimer.Enabled = false;
                 progressBar.Value = 0;
 
+                exportButton.Visible = true;
                 dataTable.Visible = true;
-            }
-            else this.progressBar.Value += progressBarValue;
 
+            }
+            else progressBar.PerformStep();
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -98,13 +116,6 @@ namespace StariApp
             form8.Show();
         }
 
-        private StringBuilder returnLarger(StringBuilder s, StringBuilder s2)
-        {
-            if (s.ToString().Split('\n').Length >= s2.ToString().Split('\n').Length)
-                return s;
-            return s2;
-        }
-
         private void panel2_Paint(object sender, PaintEventArgs e)
         {
 
@@ -124,67 +135,6 @@ namespace StariApp
         private void cardButton1_Load_1(object sender, EventArgs e)
         {
 
-        }
-
-        private void button8_Click(object sender, EventArgs e)
-        {
-            StringBuilder StringBuilderWorker = new StringBuilder();
-            StringBuilderWorker.Append("\n");
-
-            StringBuilder tmpSB = new StringBuilder();
-            StringBuilder ReturnStringBuilder = new StringBuilder();
-            ReturnStringBuilder.Append("Worker Id,Name,Last Name,Position,,,Date, Duration, Worker");
-            ReturnStringBuilder.Append("\n");
-            using (var context = new WorkContext())
-            {
-                var Workers = (from s in context.Workers orderby s.name select s).ToList<Worker>();
-                var Resource = (from s in context.Resources orderby s.name select s).ToList<Resource>();
-                var Stocks = (from s in context.Stocks orderby s.resource select s).ToList<Stock>();
-                var Works = (from s in context.Works orderby s.Id select s).ToList<Work>();
-                var Positions = (from s in context.Positions orderby s.position select s).ToList<Position>();
-
-                foreach (var Worker in Workers)
-                {
-                    var Position = context.Positions
-                                    .Where(c => c.Id == Worker.position)
-                                    .FirstOrDefault();
-
-
-                    Console.WriteLine("ID: {0}, Name: {1}, Position: {2}", Worker.Id, Worker.name, Position.position);
-                    StringBuilderWorker.Append(Worker.Id + "," + Worker.name + "," + Worker.lastName + "," + Position.position);
-                    StringBuilderWorker.Append("\n");
-                }
-
-                foreach (var Work in Works)
-                {
-                    foreach (var Worker in Workers)
-                    {
-                        if (Worker.Id == Work.worker)
-                        {
-                            StringBuilderWorker.Append(Work.date + "," + Work.duration + "," + Worker.name + " " + Worker.lastName);
-                            tmpSB.Append("\n");
-                        }
-                    }
-                }
-            }
-
-            SaveFileDialog saveFileDialog1 = new SaveFileDialog();
-
-            saveFileDialog1.Filter = "csv files (*.csv)|*.csv|All files (*.*)|*.*";
-            saveFileDialog1.DefaultExt = "csv";
-            saveFileDialog1.FilterIndex = 2;
-            saveFileDialog1.RestoreDirectory = true;
-            saveFileDialog1.AddExtension = true;
-
-            if (saveFileDialog1.ShowDialog() == DialogResult.OK)
-            {
-                var file = new StreamWriter(saveFileDialog1.FileName);
-                foreach (String line in StringBuilderWorker.ToString().Split('\n'))
-                {
-                    file.WriteLine(line);
-                }
-                file.Close();
-            }
         }
 
         Point lastPoint;
@@ -215,26 +165,89 @@ namespace StariApp
             this.WindowState = FormWindowState.Minimized;
         }
 
-        private void chromosLinkOppen(object sender, EventArgs e)
-        {
-            System.Diagnostics.Process.Start("https://www.chromos-svjetlost.hr/hr/");
-        }
-
         private void workerButton_Click(object sender, EventArgs e)
         {
-            SlideShowTimer.Enabled = false;
             title.Text = "Popis Radnika";
-            pictureSlide.Visible = false;
-            progressBar.Visible = true;
+            dataTable.DataSource = Connection.ListWorkers();
 
-            ProgressBarTimer.Interval = 200;
-            ProgressBarTimer.Tick += new EventHandler(OnTimedEventProgresBar);
-            ProgressBarTimer.Enabled = true;
+            if (!CurrentData.Equals(DataClass.Worker))
+            {
+                defineStartingVisablity(DataClass.Worker, "Zaposlenika");
+                lastColorButton = workerButton.BackColor;
+                workerButton.BackColor = buttonSelected;
+            }
         }
 
         private void pictureSlide_Click(object sender, EventArgs e)
         {
             System.Diagnostics.Process.Start("https://www.chromos-svjetlost.hr/hr/industrija");
+        }
+
+        private void resourceButton_Click(object sender, EventArgs e)
+        {
+            title.Text = "Popis Resursa";
+            dataTable.DataSource = Connection.ListResources();
+
+            if (!CurrentData.Equals(DataClass.Resource))
+            {
+                defineStartingVisablity(DataClass.Resource, "Resursa");
+                lastColorButton = resourceButton.BackColor;
+                resourceButton.BackColor = buttonSelected;
+            }
+        }
+
+        private void defineStartingVisablity(DataClass data, string loadingText)
+        {
+            returnToOriginalColor();
+
+            SlideShowTimer.Enabled = false;
+            pictureSlide.Visible = false;
+
+            CurrentData = data;
+            dataTable.Visible = false;
+            exportButton.Visible = false;
+
+            loadingLabel.Text = string.Format("Učitavanje {0}...", loadingText);
+            loadingLabel.Visible = true;
+
+            progressBar.Visible = true;
+            ProgressBarTimer.Interval = 100;
+            ProgressBarTimer.Tick += new EventHandler(OnTimedEventProgresBar);
+            ProgressBarTimer.Enabled = true;
+        }
+
+        private void returnToOriginalColor()
+        {
+            foreach (var button in ListOfButtons) 
+            {
+                if (button.BackColor.ToArgb().Equals(buttonSelected.ToArgb()))
+                    button.BackColor = lastColorButton;
+            }
+        }
+        private void exportButton_Click(object sender, EventArgs e)
+        {
+            StringBuilder sb = new StringBuilder();
+
+            foreach (DataGridViewColumn headerCell in dataTable.Columns)
+                sb.Append(string.Format(",{0}", headerCell.HeaderText.ToString()));
+
+            foreach (DataGridViewRow Row in dataTable.Rows)
+            {
+                sb.Append("\n");
+                foreach (DataGridViewCell cell in Row.Cells)
+                    sb.Append(string.Format(",{0}",cell.Value.ToString()));
+            }
+
+            saveFileDialog.Filter = "CSV documents|*.csv";
+            saveFileDialog.ShowDialog();
+
+            if (saveFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                var file = new StreamWriter(saveFileDialog.FileName);
+                foreach (var line in sb.ToString().Split('\n'))
+                    file.WriteLine(line, Encoding.UTF8);
+                file.Close();
+            }
         }
     }
 }

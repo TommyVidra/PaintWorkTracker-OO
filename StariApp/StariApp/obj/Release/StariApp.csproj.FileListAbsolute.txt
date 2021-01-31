@@ -20,8 +20,6 @@ G:\Projects\Fax\OO\Paint Work Tracker\PaintWorkTracker\StariApp\StariApp\bin\Rel
 G:\Projects\Fax\OO\Paint Work Tracker\PaintWorkTracker\StariApp\StariApp\bin\Release\System.Text.Encodings.Web.xml
 G:\Projects\Fax\OO\Paint Work Tracker\PaintWorkTracker\StariApp\StariApp\bin\Release\System.ValueTuple.xml
 G:\Projects\Fax\OO\Paint Work Tracker\PaintWorkTracker\StariApp\StariApp\bin\Release\es\Microsoft.Data.SqlClient.resources.dll
-G:\Projects\Fax\OO\Paint Work Tracker\PaintWorkTracker\StariApp\StariApp\bin\Release\StariAppDB.mdf
-G:\Projects\Fax\OO\Paint Work Tracker\PaintWorkTracker\StariApp\StariApp\bin\Release\StariAppDB_log.ldf
 G:\Projects\Fax\OO\Paint Work Tracker\PaintWorkTracker\StariApp\StariApp\bin\Release\StariApp.exe.config
 G:\Projects\Fax\OO\Paint Work Tracker\PaintWorkTracker\StariApp\StariApp\bin\Release\StariApp.exe
 G:\Projects\Fax\OO\Paint Work Tracker\PaintWorkTracker\StariApp\StariApp\bin\Release\StariApp.pdb
@@ -148,12 +146,6 @@ G:\Projects\Fax\OO\Paint Work Tracker\PaintWorkTracker\StariApp\StariApp\bin\Rel
 G:\Projects\Fax\OO\Paint Work Tracker\PaintWorkTracker\StariApp\StariApp\bin\Release\zh-Hans\Microsoft.Data.SqlClient.resources.dll
 G:\Projects\Fax\OO\Paint Work Tracker\PaintWorkTracker\StariApp\StariApp\bin\Release\zh-Hant\Microsoft.Data.SqlClient.resources.dll
 G:\Projects\Fax\OO\Paint Work Tracker\PaintWorkTracker\StariApp\StariApp\obj\Release\StariApp.form1.resources
-G:\Projects\Fax\OO\Paint Work Tracker\PaintWorkTracker\StariApp\StariApp\obj\Release\StariApp.Form3.resources
-G:\Projects\Fax\OO\Paint Work Tracker\PaintWorkTracker\StariApp\StariApp\obj\Release\StariApp.Form4.resources
-G:\Projects\Fax\OO\Paint Work Tracker\PaintWorkTracker\StariApp\StariApp\obj\Release\StariApp.Form5.resources
-G:\Projects\Fax\OO\Paint Work Tracker\PaintWorkTracker\StariApp\StariApp\obj\Release\StariApp.Form6.resources
-G:\Projects\Fax\OO\Paint Work Tracker\PaintWorkTracker\StariApp\StariApp\obj\Release\StariApp.Form7.resources
-G:\Projects\Fax\OO\Paint Work Tracker\PaintWorkTracker\StariApp\StariApp\obj\Release\StariApp.Form8.resources
 G:\Projects\Fax\OO\Paint Work Tracker\PaintWorkTracker\StariApp\StariApp\obj\Release\StariApp.Properties.Resources.resources
 G:\Projects\Fax\OO\Paint Work Tracker\PaintWorkTracker\StariApp\StariApp\obj\Release\StariApp.csproj.GenerateResource.cache
 G:\Projects\Fax\OO\Paint Work Tracker\PaintWorkTracker\StariApp\StariApp\obj\Release\StariApp.csproj.CoreCompileInputs.cache

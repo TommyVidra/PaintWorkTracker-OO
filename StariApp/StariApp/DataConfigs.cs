@@ -11,7 +11,7 @@ namespace StariApp
 
         public enum DataClass
         {
-            Worker, Work, Position, Resource, Note, Stock, None
+            Worker, Work, Position, Resource, Note, Stock, Period, None
         }
     }
 }

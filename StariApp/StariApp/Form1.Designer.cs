@@ -31,14 +31,15 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(form1));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.workerButton = new System.Windows.Forms.Button();
             this.resourceButton = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.notesButton = new System.Windows.Forms.Button();
             this.positionsButton = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
+            this.worksButton = new System.Windows.Forms.Button();
             this.exportButton = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
+            this.periodButton = new System.Windows.Forms.Button();
+            this.stockButton = new System.Windows.Forms.Button();
             this.eventsViewBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
             this.title = new System.Windows.Forms.Label();
@@ -46,18 +47,23 @@
             this.minimizeButton = new System.Windows.Forms.Button();
             this.closeButton = new System.Windows.Forms.Button();
             this.mainContainer = new System.Windows.Forms.Panel();
+            this.searchButton = new System.Windows.Forms.Button();
+            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dataTable2 = new System.Windows.Forms.DataGridView();
+            this.cancelButton = new System.Windows.Forms.Button();
+            this.saveButton = new System.Windows.Forms.Button();
+            this.addButton = new System.Windows.Forms.Button();
             this.loadingLabel = new System.Windows.Forms.Label();
             this.progressBar = new System.Windows.Forms.ProgressBar();
-            this.dataTable = new System.Windows.Forms.DataGridView();
+            this.dataTable1 = new System.Windows.Forms.DataGridView();
             this.pictureSlide = new System.Windows.Forms.PictureBox();
-            this.addButton = new System.Windows.Forms.Button();
-            this.saveButton = new System.Windows.Forms.Button();
-            this.cancelButton = new System.Windows.Forms.Button();
             this.gradientPanel1 = new StariApp.GradientPanel();
             ((System.ComponentModel.ISupportInitialize)(this.eventsViewBindingSource)).BeginInit();
             this.panel1.SuspendLayout();
             this.mainContainer.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataTable)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataTable2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataTable1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureSlide)).BeginInit();
             this.SuspendLayout();
             // 
@@ -100,25 +106,25 @@
             this.resourceButton.UseVisualStyleBackColor = false;
             this.resourceButton.Click += new System.EventHandler(this.resourceButton_Click);
             // 
-            // button4
+            // notesButton
             // 
-            this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(101)))), ((int)(((byte)(138)))));
-            this.button4.FlatAppearance.BorderSize = 0;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.button4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(233)))), ((int)(((byte)(242)))));
-            this.button4.Image = ((System.Drawing.Image)(resources.GetObject("button4.Image")));
-            this.button4.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
-            this.button4.Location = new System.Drawing.Point(0, 300);
-            this.button4.Name = "button4";
-            this.button4.Padding = new System.Windows.Forms.Padding(0, 8, 0, 2);
-            this.button4.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.button4.Size = new System.Drawing.Size(250, 100);
-            this.button4.TabIndex = 2;
-            this.button4.Text = "Napomene";
-            this.button4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button4.UseVisualStyleBackColor = false;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.notesButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(101)))), ((int)(((byte)(138)))));
+            this.notesButton.FlatAppearance.BorderSize = 0;
+            this.notesButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.notesButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.notesButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(233)))), ((int)(((byte)(242)))));
+            this.notesButton.Image = ((System.Drawing.Image)(resources.GetObject("notesButton.Image")));
+            this.notesButton.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.notesButton.Location = new System.Drawing.Point(0, 300);
+            this.notesButton.Name = "notesButton";
+            this.notesButton.Padding = new System.Windows.Forms.Padding(0, 8, 0, 2);
+            this.notesButton.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.notesButton.Size = new System.Drawing.Size(250, 100);
+            this.notesButton.TabIndex = 2;
+            this.notesButton.Text = "Napomene";
+            this.notesButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.notesButton.UseVisualStyleBackColor = false;
+            this.notesButton.Click += new System.EventHandler(this.notesButton_Click);
             // 
             // positionsButton
             // 
@@ -139,24 +145,24 @@
             this.positionsButton.UseVisualStyleBackColor = false;
             this.positionsButton.Click += new System.EventHandler(this.positionsButton_Click);
             // 
-            // button5
+            // worksButton
             // 
-            this.button5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(92)))), ((int)(((byte)(125)))));
-            this.button5.FlatAppearance.BorderSize = 0;
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.button5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(233)))), ((int)(((byte)(242)))));
-            this.button5.Image = ((System.Drawing.Image)(resources.GetObject("button5.Image")));
-            this.button5.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
-            this.button5.Location = new System.Drawing.Point(0, 400);
-            this.button5.Name = "button5";
-            this.button5.Padding = new System.Windows.Forms.Padding(0, 8, 0, 0);
-            this.button5.Size = new System.Drawing.Size(250, 100);
-            this.button5.TabIndex = 4;
-            this.button5.Text = "Radovi";
-            this.button5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button5.UseVisualStyleBackColor = false;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
+            this.worksButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(92)))), ((int)(((byte)(125)))));
+            this.worksButton.FlatAppearance.BorderSize = 0;
+            this.worksButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.worksButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.worksButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(233)))), ((int)(((byte)(242)))));
+            this.worksButton.Image = ((System.Drawing.Image)(resources.GetObject("worksButton.Image")));
+            this.worksButton.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.worksButton.Location = new System.Drawing.Point(0, 400);
+            this.worksButton.Name = "worksButton";
+            this.worksButton.Padding = new System.Windows.Forms.Padding(0, 8, 0, 0);
+            this.worksButton.Size = new System.Drawing.Size(250, 100);
+            this.worksButton.TabIndex = 4;
+            this.worksButton.Text = "Radovi";
+            this.worksButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.worksButton.UseVisualStyleBackColor = false;
+            this.worksButton.Click += new System.EventHandler(this.worksButton_Click);
             // 
             // exportButton
             // 
@@ -174,49 +180,49 @@
             this.exportButton.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.exportButton.Size = new System.Drawing.Size(135, 135);
             this.exportButton.TabIndex = 8;
-            this.exportButton.Text = "Export to CSV";
+            this.exportButton.Text = "Izvezi u CSV";
             this.exportButton.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.exportButton.UseVisualStyleBackColor = false;
             this.exportButton.Visible = false;
             this.exportButton.Click += new System.EventHandler(this.exportButton_Click);
             // 
-            // button7
+            // periodButton
             // 
-            this.button7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(73)))), ((int)(((byte)(99)))));
-            this.button7.FlatAppearance.BorderSize = 0;
-            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.button7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(233)))), ((int)(((byte)(242)))));
-            this.button7.Image = ((System.Drawing.Image)(resources.GetObject("button7.Image")));
-            this.button7.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
-            this.button7.Location = new System.Drawing.Point(0, 600);
-            this.button7.Name = "button7";
-            this.button7.Padding = new System.Windows.Forms.Padding(0, 8, 0, 0);
-            this.button7.Size = new System.Drawing.Size(250, 100);
-            this.button7.TabIndex = 7;
-            this.button7.Text = "Period";
-            this.button7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button7.UseVisualStyleBackColor = false;
-            this.button7.Click += new System.EventHandler(this.button7_Click);
+            this.periodButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(73)))), ((int)(((byte)(99)))));
+            this.periodButton.FlatAppearance.BorderSize = 0;
+            this.periodButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.periodButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.periodButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(233)))), ((int)(((byte)(242)))));
+            this.periodButton.Image = ((System.Drawing.Image)(resources.GetObject("periodButton.Image")));
+            this.periodButton.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.periodButton.Location = new System.Drawing.Point(0, 600);
+            this.periodButton.Name = "periodButton";
+            this.periodButton.Padding = new System.Windows.Forms.Padding(0, 8, 0, 0);
+            this.periodButton.Size = new System.Drawing.Size(250, 100);
+            this.periodButton.TabIndex = 7;
+            this.periodButton.Text = "Period";
+            this.periodButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.periodButton.UseVisualStyleBackColor = false;
+            this.periodButton.Click += new System.EventHandler(this.periodButton_Click);
             // 
-            // button6
+            // stockButton
             // 
-            this.button6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(82)))), ((int)(((byte)(111)))));
-            this.button6.FlatAppearance.BorderSize = 0;
-            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.button6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(233)))), ((int)(((byte)(242)))));
-            this.button6.Image = ((System.Drawing.Image)(resources.GetObject("button6.Image")));
-            this.button6.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
-            this.button6.Location = new System.Drawing.Point(0, 500);
-            this.button6.Name = "button6";
-            this.button6.Padding = new System.Windows.Forms.Padding(0, 8, 0, 0);
-            this.button6.Size = new System.Drawing.Size(250, 100);
-            this.button6.TabIndex = 5;
-            this.button6.Text = "Skladište";
-            this.button6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button6.UseVisualStyleBackColor = false;
-            this.button6.Click += new System.EventHandler(this.button6_Click);
+            this.stockButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(82)))), ((int)(((byte)(111)))));
+            this.stockButton.FlatAppearance.BorderSize = 0;
+            this.stockButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.stockButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.stockButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(233)))), ((int)(((byte)(242)))));
+            this.stockButton.Image = ((System.Drawing.Image)(resources.GetObject("stockButton.Image")));
+            this.stockButton.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.stockButton.Location = new System.Drawing.Point(0, 500);
+            this.stockButton.Name = "stockButton";
+            this.stockButton.Padding = new System.Windows.Forms.Padding(0, 8, 0, 0);
+            this.stockButton.Size = new System.Drawing.Size(250, 100);
+            this.stockButton.TabIndex = 5;
+            this.stockButton.Text = "Skladište";
+            this.stockButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.stockButton.UseVisualStyleBackColor = false;
+            this.stockButton.Click += new System.EventHandler(this.stockButton_Click);
             // 
             // eventsViewBindingSource
             // 
@@ -278,6 +284,10 @@
             // 
             // mainContainer
             // 
+            this.mainContainer.Controls.Add(this.searchButton);
+            this.mainContainer.Controls.Add(this.dateTimePicker2);
+            this.mainContainer.Controls.Add(this.dateTimePicker1);
+            this.mainContainer.Controls.Add(this.dataTable2);
             this.mainContainer.Controls.Add(this.title);
             this.mainContainer.Controls.Add(this.cancelButton);
             this.mainContainer.Controls.Add(this.saveButton);
@@ -285,12 +295,111 @@
             this.mainContainer.Controls.Add(this.exportButton);
             this.mainContainer.Controls.Add(this.loadingLabel);
             this.mainContainer.Controls.Add(this.progressBar);
-            this.mainContainer.Controls.Add(this.dataTable);
+            this.mainContainer.Controls.Add(this.dataTable1);
             this.mainContainer.Controls.Add(this.pictureSlide);
             this.mainContainer.Location = new System.Drawing.Point(256, 151);
             this.mainContainer.Name = "mainContainer";
             this.mainContainer.Size = new System.Drawing.Size(973, 538);
             this.mainContainer.TabIndex = 13;
+            // 
+            // searchButton
+            // 
+            this.searchButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(141)))), ((int)(((byte)(87)))));
+            this.searchButton.FlatAppearance.BorderSize = 0;
+            this.searchButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.searchButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.searchButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(233)))), ((int)(((byte)(242)))));
+            this.searchButton.Location = new System.Drawing.Point(20, 167);
+            this.searchButton.Name = "searchButton";
+            this.searchButton.Size = new System.Drawing.Size(135, 35);
+            this.searchButton.TabIndex = 15;
+            this.searchButton.Text = "Traži";
+            this.searchButton.UseVisualStyleBackColor = false;
+            this.searchButton.Visible = false;
+            this.searchButton.Click += new System.EventHandler(this.searchButton_Click);
+            // 
+            // dateTimePicker2
+            // 
+            this.dateTimePicker2.Location = new System.Drawing.Point(20, 129);
+            this.dateTimePicker2.Name = "dateTimePicker2";
+            this.dateTimePicker2.Size = new System.Drawing.Size(200, 20);
+            this.dateTimePicker2.TabIndex = 14;
+            this.dateTimePicker2.Value = new System.DateTime(2021, 1, 16, 11, 4, 40, 0);
+            this.dateTimePicker2.Visible = false;
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Location = new System.Drawing.Point(20, 88);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
+            this.dateTimePicker1.TabIndex = 13;
+            this.dateTimePicker1.Value = new System.DateTime(2019, 1, 1, 0, 0, 0, 0);
+            this.dateTimePicker1.Visible = false;
+            // 
+            // dataTable2
+            // 
+            this.dataTable2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Honeydew;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataTable2.DefaultCellStyle = dataGridViewCellStyle1;
+            this.dataTable2.Location = new System.Drawing.Point(294, 276);
+            this.dataTable2.Name = "dataTable2";
+            this.dataTable2.Size = new System.Drawing.Size(652, 250);
+            this.dataTable2.TabIndex = 12;
+            this.dataTable2.Visible = false;
+            this.dataTable2.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataTable_CellEndEdit);
+            // 
+            // cancelButton
+            // 
+            this.cancelButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(100)))), ((int)(((byte)(150)))));
+            this.cancelButton.FlatAppearance.BorderSize = 0;
+            this.cancelButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cancelButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.cancelButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(233)))), ((int)(((byte)(242)))));
+            this.cancelButton.Location = new System.Drawing.Point(20, 308);
+            this.cancelButton.Name = "cancelButton";
+            this.cancelButton.Size = new System.Drawing.Size(135, 35);
+            this.cancelButton.TabIndex = 11;
+            this.cancelButton.Text = "Odustani";
+            this.cancelButton.UseVisualStyleBackColor = false;
+            this.cancelButton.Visible = false;
+            // 
+            // saveButton
+            // 
+            this.saveButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(141)))), ((int)(((byte)(87)))));
+            this.saveButton.FlatAppearance.BorderSize = 0;
+            this.saveButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.saveButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.saveButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(233)))), ((int)(((byte)(242)))));
+            this.saveButton.Location = new System.Drawing.Point(20, 267);
+            this.saveButton.Name = "saveButton";
+            this.saveButton.Size = new System.Drawing.Size(135, 35);
+            this.saveButton.TabIndex = 10;
+            this.saveButton.Text = "Spremi";
+            this.saveButton.UseVisualStyleBackColor = false;
+            this.saveButton.Visible = false;
+            this.saveButton.Click += new System.EventHandler(this.saveButton_Click);
+            // 
+            // addButton
+            // 
+            this.addButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(141)))), ((int)(((byte)(87)))));
+            this.addButton.FlatAppearance.BorderSize = 0;
+            this.addButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.addButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.addButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(233)))), ((int)(((byte)(242)))));
+            this.addButton.Location = new System.Drawing.Point(20, 349);
+            this.addButton.Name = "addButton";
+            this.addButton.Size = new System.Drawing.Size(135, 35);
+            this.addButton.TabIndex = 9;
+            this.addButton.Text = "Nadodaj";
+            this.addButton.UseVisualStyleBackColor = false;
+            this.addButton.Visible = false;
+            this.addButton.Click += new System.EventHandler(this.addButton_Click);
             // 
             // loadingLabel
             // 
@@ -315,21 +424,23 @@
             this.progressBar.UseWaitCursor = true;
             this.progressBar.Visible = false;
             // 
-            // dataTable
+            // dataTable1
             // 
-            this.dataTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Honeydew;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataTable.DefaultCellStyle = dataGridViewCellStyle1;
-            this.dataTable.Location = new System.Drawing.Point(256, 15);
-            this.dataTable.Name = "dataTable";
-            this.dataTable.Size = new System.Drawing.Size(689, 510);
-            this.dataTable.TabIndex = 2;
+            this.dataTable1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Honeydew;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataTable1.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dataTable1.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
+            this.dataTable1.Location = new System.Drawing.Point(294, 14);
+            this.dataTable1.Name = "dataTable1";
+            this.dataTable1.Size = new System.Drawing.Size(650, 250);
+            this.dataTable1.TabIndex = 2;
+            this.dataTable1.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataTable_CellEndEdit);
             // 
             // pictureSlide
             // 
@@ -342,52 +453,6 @@
             this.pictureSlide.TabIndex = 0;
             this.pictureSlide.TabStop = false;
             this.pictureSlide.Click += new System.EventHandler(this.pictureSlide_Click);
-            // 
-            // addButton
-            // 
-            this.addButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(141)))), ((int)(((byte)(87)))));
-            this.addButton.FlatAppearance.BorderSize = 0;
-            this.addButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.addButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.addButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(233)))), ((int)(((byte)(242)))));
-            this.addButton.Location = new System.Drawing.Point(20, 349);
-            this.addButton.Name = "addButton";
-            this.addButton.Size = new System.Drawing.Size(135, 35);
-            this.addButton.TabIndex = 9;
-            this.addButton.Text = "Add";
-            this.addButton.UseVisualStyleBackColor = false;
-            this.addButton.Visible = false;
-            this.addButton.Click += new System.EventHandler(this.addButton_Click);
-            // 
-            // saveButton
-            // 
-            this.saveButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(141)))), ((int)(((byte)(87)))));
-            this.saveButton.FlatAppearance.BorderSize = 0;
-            this.saveButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.saveButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.saveButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(233)))), ((int)(((byte)(242)))));
-            this.saveButton.Location = new System.Drawing.Point(20, 267);
-            this.saveButton.Name = "saveButton";
-            this.saveButton.Size = new System.Drawing.Size(135, 35);
-            this.saveButton.TabIndex = 10;
-            this.saveButton.Text = "Save";
-            this.saveButton.UseVisualStyleBackColor = false;
-            this.saveButton.Visible = false;
-            // 
-            // cancelButton
-            // 
-            this.cancelButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(100)))), ((int)(((byte)(150)))));
-            this.cancelButton.FlatAppearance.BorderSize = 0;
-            this.cancelButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cancelButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.cancelButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(233)))), ((int)(((byte)(242)))));
-            this.cancelButton.Location = new System.Drawing.Point(20, 308);
-            this.cancelButton.Name = "cancelButton";
-            this.cancelButton.Size = new System.Drawing.Size(135, 35);
-            this.cancelButton.TabIndex = 11;
-            this.cancelButton.Text = "Cancel";
-            this.cancelButton.UseVisualStyleBackColor = false;
-            this.cancelButton.Visible = false;
             // 
             // gradientPanel1
             // 
@@ -414,10 +479,10 @@
             this.ControlBox = false;
             this.Controls.Add(this.mainContainer);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.button7);
-            this.Controls.Add(this.button6);
-            this.Controls.Add(this.button5);
-            this.Controls.Add(this.button4);
+            this.Controls.Add(this.periodButton);
+            this.Controls.Add(this.stockButton);
+            this.Controls.Add(this.worksButton);
+            this.Controls.Add(this.notesButton);
             this.Controls.Add(this.positionsButton);
             this.Controls.Add(this.resourceButton);
             this.Controls.Add(this.workerButton);
@@ -435,7 +500,8 @@
             this.panel1.ResumeLayout(false);
             this.mainContainer.ResumeLayout(false);
             this.mainContainer.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataTable)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataTable2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataTable1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureSlide)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -446,11 +512,11 @@
         private System.Windows.Forms.BindingSource eventsViewBindingSource;
         private System.Windows.Forms.Button workerButton;
         private System.Windows.Forms.Button resourceButton;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button notesButton;
         private System.Windows.Forms.Button positionsButton;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Button worksButton;
+        private System.Windows.Forms.Button stockButton;
+        private System.Windows.Forms.Button periodButton;
         private GradientPanel gradientPanel1;
         private System.Windows.Forms.SaveFileDialog saveFileDialog;
         private System.Windows.Forms.Button exportButton;
@@ -461,11 +527,15 @@
         private System.Windows.Forms.Panel mainContainer;
         private System.Windows.Forms.PictureBox pictureSlide;
         private System.Windows.Forms.ProgressBar progressBar;
-        private System.Windows.Forms.DataGridView dataTable;
+        private System.Windows.Forms.DataGridView dataTable1;
         private System.Windows.Forms.Label loadingLabel;
         private System.Windows.Forms.Button addButton;
         private System.Windows.Forms.Button saveButton;
         private System.Windows.Forms.Button cancelButton;
+        private System.Windows.Forms.DataGridView dataTable2;
+        private System.Windows.Forms.DateTimePicker dateTimePicker2;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.Button searchButton;
     }
 }
 

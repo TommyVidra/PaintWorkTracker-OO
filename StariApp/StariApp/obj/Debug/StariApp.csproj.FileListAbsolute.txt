@@ -33,8 +33,6 @@ E:\Projects\Završeni Projekti\StariApp\StariApp\StariApp\obj\Debug\StariApp.Pro
 E:\Projects\Završeni Projekti\StariApp\StariApp\StariApp\obj\Debug\StariApp.csproj.GenerateResource.cache
 E:\Projects\Završeni Projekti\StariApp\StariApp\StariApp\obj\Debug\StariApp.exe
 E:\Projects\Završeni Projekti\StariApp\StariApp\StariApp\obj\Debug\StariApp.pdb
-G:\Projects\Fax\OO\Paint Work Tracker\PaintWorkTracker\StariApp\StariApp\bin\Debug\StariAppDB.mdf
-G:\Projects\Fax\OO\Paint Work Tracker\PaintWorkTracker\StariApp\StariApp\bin\Debug\StariAppDB_log.ldf
 G:\Projects\Fax\OO\Paint Work Tracker\PaintWorkTracker\StariApp\StariApp\bin\Debug\StariApp.exe.config
 G:\Projects\Fax\OO\Paint Work Tracker\PaintWorkTracker\StariApp\StariApp\bin\Debug\StariApp.exe
 G:\Projects\Fax\OO\Paint Work Tracker\PaintWorkTracker\StariApp\StariApp\bin\Debug\StariApp.pdb
@@ -166,16 +164,21 @@ G:\Projects\Fax\OO\Paint Work Tracker\PaintWorkTracker\StariApp\StariApp\bin\Deb
 G:\Projects\Fax\OO\Paint Work Tracker\PaintWorkTracker\StariApp\StariApp\bin\Debug\zh-Hant\Microsoft.Data.SqlClient.resources.dll
 G:\Projects\Fax\OO\Paint Work Tracker\PaintWorkTracker\StariApp\StariApp\obj\Debug\StariApp.csprojAssemblyReference.cache
 G:\Projects\Fax\OO\Paint Work Tracker\PaintWorkTracker\StariApp\StariApp\obj\Debug\StariApp.form1.resources
-G:\Projects\Fax\OO\Paint Work Tracker\PaintWorkTracker\StariApp\StariApp\obj\Debug\StariApp.Form2.resources
-G:\Projects\Fax\OO\Paint Work Tracker\PaintWorkTracker\StariApp\StariApp\obj\Debug\StariApp.Form3.resources
-G:\Projects\Fax\OO\Paint Work Tracker\PaintWorkTracker\StariApp\StariApp\obj\Debug\StariApp.Form4.resources
-G:\Projects\Fax\OO\Paint Work Tracker\PaintWorkTracker\StariApp\StariApp\obj\Debug\StariApp.Form5.resources
-G:\Projects\Fax\OO\Paint Work Tracker\PaintWorkTracker\StariApp\StariApp\obj\Debug\StariApp.Form6.resources
-G:\Projects\Fax\OO\Paint Work Tracker\PaintWorkTracker\StariApp\StariApp\obj\Debug\StariApp.Form7.resources
-G:\Projects\Fax\OO\Paint Work Tracker\PaintWorkTracker\StariApp\StariApp\obj\Debug\StariApp.Form8.resources
 G:\Projects\Fax\OO\Paint Work Tracker\PaintWorkTracker\StariApp\StariApp\obj\Debug\StariApp.Properties.Resources.resources
 G:\Projects\Fax\OO\Paint Work Tracker\PaintWorkTracker\StariApp\StariApp\obj\Debug\StariApp.csproj.GenerateResource.cache
 G:\Projects\Fax\OO\Paint Work Tracker\PaintWorkTracker\StariApp\StariApp\obj\Debug\StariApp.csproj.CoreCompileInputs.cache
 G:\Projects\Fax\OO\Paint Work Tracker\PaintWorkTracker\StariApp\StariApp\obj\Debug\StariApp.csproj.CopyComplete
 G:\Projects\Fax\OO\Paint Work Tracker\PaintWorkTracker\StariApp\StariApp\obj\Debug\StariApp.exe
 G:\Projects\Fax\OO\Paint Work Tracker\PaintWorkTracker\StariApp\StariApp\obj\Debug\StariApp.pdb
+G:\Projects\Fax\OO\Paint Work Tracker\PaintWorkTracker\StariApp\StariApp\obj\Debug\StariApp.InputBox.resources
+G:\Projects\Fax\OO\Paint Work Tracker\PaintWorkTracker\StariApp\StariApp\bin\Debug\Antlr3.Runtime.dll
+G:\Projects\Fax\OO\Paint Work Tracker\PaintWorkTracker\StariApp\StariApp\bin\Debug\Iesi.Collections.dll
+G:\Projects\Fax\OO\Paint Work Tracker\PaintWorkTracker\StariApp\StariApp\bin\Debug\NHibernate.dll
+G:\Projects\Fax\OO\Paint Work Tracker\PaintWorkTracker\StariApp\StariApp\bin\Debug\Remotion.Linq.dll
+G:\Projects\Fax\OO\Paint Work Tracker\PaintWorkTracker\StariApp\StariApp\bin\Debug\Remotion.Linq.EagerFetching.dll
+G:\Projects\Fax\OO\Paint Work Tracker\PaintWorkTracker\StariApp\StariApp\bin\Debug\Antlr3.Runtime.xml
+G:\Projects\Fax\OO\Paint Work Tracker\PaintWorkTracker\StariApp\StariApp\bin\Debug\Iesi.Collections.xml
+G:\Projects\Fax\OO\Paint Work Tracker\PaintWorkTracker\StariApp\StariApp\bin\Debug\NHibernate.xml
+G:\Projects\Fax\OO\Paint Work Tracker\PaintWorkTracker\StariApp\StariApp\bin\Debug\Remotion.Linq.xml
+G:\Projects\Fax\OO\Paint Work Tracker\PaintWorkTracker\StariApp\StariApp\bin\Debug\Remotion.Linq.EagerFetching.xml
+G:\Projects\Fax\OO\Paint Work Tracker\PaintWorkTracker\StariApp\StariApp\obj\Debug\StariApp.exe.config

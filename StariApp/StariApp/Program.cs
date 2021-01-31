@@ -1,7 +1,10 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using NHibernate;
+using NHibernate.Mapping;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data.SqlClient;
@@ -98,6 +101,7 @@ namespace StariApp
                 foreach (var W in Works)
                     Console.WriteLine("ID: {0}, Duration: {1}, Date: {2}", W.Id, W.duration, W.date);
             }
+
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new form1());

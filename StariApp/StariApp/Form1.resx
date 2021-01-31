@@ -173,7 +173,7 @@
         fiyfVMWBwRTM2fVCOd+FPGTB/tjv/NdkYaq+Eo6O/gdT8nqYgoWfEgAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="button4.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="notesButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAF8AAABfCAYAAACOTBv1AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
         wwAADsMBx2+oZAAADLtJREFUeF7tXWt22sgSzhJYgpfgJbAELyFL8A6SHXgJLMFL4Hfm3oxzb8ZPHkLo
@@ -292,7 +292,7 @@
         5a2ZeX6V/8KbE0ZhcilHmN2BUOmLX7Y/25BTf/pczYsX/wd/UtvVPHxUYgAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="button5.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="worksButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAF8AAABfCAYAAACOTBv1AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
         wwAADsMBx2+oZAAABuxJREFUeF7tnE2O3FQUhbsVCSEkpCQjJkgZMQ4LQMoSsoSIFQQ2QAQLiGADnR00
@@ -369,7 +369,7 @@
         h8PhcPRnypT/ASTSXpPhgTIIAAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="button7.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="periodButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAF8AAABfCAYAAACOTBv1AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
         wwAADsMBx2+oZAAABmpJREFUeF7tXEuO20YQHW+ylm8wR9A+WfgIzg3mCE4uYOcE9g3mCDaQRbIIMAng
@@ -402,7 +402,7 @@
         NkHaeya5k/1W+0mOwWAwGAwGg8FgMBgMBoPBYDAYDEPA2dn/l7SCgHh47rwAAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="button6.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="stockButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAF8AAABfCAYAAACOTBv1AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
         wwAADsMBx2+oZAAABidJREFUeF7tXNuR3DYQPGWgEBSCnIFCUAgK4TLQZSBl4BDOGSgER+BSSeUP68Nl

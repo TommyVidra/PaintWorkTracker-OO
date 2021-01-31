@@ -54,7 +54,7 @@
             // 
             // dateTimePicker
             // 
-            this.dateTimePicker.Location = new System.Drawing.Point(20, 305);
+            this.dateTimePicker.Location = new System.Drawing.Point(345, 77);
             this.dateTimePicker.Name = "dateTimePicker";
             this.dateTimePicker.Size = new System.Drawing.Size(189, 20);
             this.dateTimePicker.TabIndex = 0;
@@ -62,6 +62,7 @@
             // textBox5
             // 
             this.textBox5.Location = new System.Drawing.Point(20, 260);
+            this.textBox5.MaximumSize = new System.Drawing.Size(189, 90);
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(189, 20);
             this.textBox5.TabIndex = 1;
@@ -69,6 +70,7 @@
             // textBox3
             // 
             this.textBox3.Location = new System.Drawing.Point(20, 170);
+            this.textBox3.MaximumSize = new System.Drawing.Size(189, 60);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(189, 20);
             this.textBox3.TabIndex = 2;
@@ -169,7 +171,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(248, 306);
+            this.label6.Location = new System.Drawing.Point(573, 78);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(50, 16);
             this.label6.TabIndex = 20;
@@ -188,6 +190,7 @@
             this.okButton.TabIndex = 21;
             this.okButton.Text = "OK";
             this.okButton.UseVisualStyleBackColor = false;
+            this.okButton.Click += new System.EventHandler(this.okButton_Click);
             // 
             // cancleButton
             // 
@@ -215,6 +218,8 @@
             this.gradientPanel1.SecondColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(64)))), ((int)(((byte)(86)))));
             this.gradientPanel1.Size = new System.Drawing.Size(657, 52);
             this.gradientPanel1.TabIndex = 13;
+            this.gradientPanel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.gradientPanel1_MouseDown);
+            this.gradientPanel1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.gradientPanel1_MouseMove);
             // 
             // InputBox
             // 

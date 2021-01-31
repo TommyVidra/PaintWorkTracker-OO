@@ -93,17 +93,21 @@ namespace StariApp
 
                 exportButton.Visible = true;
                 dataTable1.Visible = true;
-                
+                addButton.Visible = true;
+
                 if (CurrentData.Equals(DataClass.Period) || CurrentData.Equals(DataClass.Note))
                 {
-                    if(CurrentData.Equals(DataClass.Period)) dataTable2.Visible = true;
+                    if (CurrentData.Equals(DataClass.Period))
+                    { 
+                        dataTable2.Visible = true;
+                        addButton.Visible = false;
+                    }
 
                     dateTimePicker1.Visible = true;
                     dateTimePicker2.Visible = true;
                     searchButton.Visible = true;
                 }
 
-                else addButton.Visible = true;
 
                 if (ProgressBarTimer.Interval <= 6) ProgressBarTimer.Interval = 6;
                 else ProgressBarTimer.Interval -= 1;
@@ -136,10 +140,7 @@ namespace StariApp
             }
         }
 
-        private void gradientPanel1_MouseDown(object sender, MouseEventArgs e)
-        {
-            lastPoint = new Point(e.X, e.Y);
-        }
+        private void gradientPanel1_MouseDown(object sender, MouseEventArgs e) { lastPoint = new Point(e.X, e.Y); }
 
         private void closeButton_Click(object sender, EventArgs e)
         {
@@ -275,11 +276,9 @@ namespace StariApp
 
         private void addButton_Click(object sender, EventArgs e)
         {
-            saveButton.Visible = true;
-            cancelButton.Visible = true;
-
             InputBox input = new InputBox(CurrentData);
             input.Show();
+            input.FormClosed += new FormClosedEventHandler(InputBoxClosed);
         }
 
         private void defineStartingVisablity(DataClass data)
@@ -290,6 +289,8 @@ namespace StariApp
             SlideShowTimer.Enabled = false;
             pictureSlide.Visible = false;
             saveButton.Visible = false;
+            cancelButton.Visible = false;
+            deleteButton.Visible = false;
 
             CurrentData = data;
             dataTable1.Visible = false;
@@ -344,34 +345,362 @@ namespace StariApp
         private void dataTable_CellEndEdit(object sender, DataGridViewCellEventArgs e)
         {
             saveButton.Visible = true;
+            cancelButton.Visible = true;
         }
 
         private void saveButton_Click(object sender, EventArgs e)
         {
-            StringBuilder sb = new StringBuilder();
-            foreach (DataGridViewRow Row in dataTable1.Rows)
+            if(MessageBox.Show("Jeste li sigurni da želite spremiti nove izmjene?", "Modifier window question", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
-                foreach (DataGridViewCell cell in Row.Cells)
-                    sb.Append(string.Format("{0},", cell.Value.ToString()));
-                sb.Append("_");
-            }
+                StringBuilder sb = new StringBuilder();
+                foreach (DataGridViewRow Row in dataTable1.Rows)
+                {
+                    foreach (DataGridViewCell cell in Row.Cells)
+                        sb.Append(string.Format("{0},", cell.Value.ToString()));
+                    sb.Append("_");
+                }
 
-            String[] seperators = { "_" };
-            switch(CurrentData)
+                String[] seperators = { "_" };
+                switch(CurrentData)
+                {
+                    case DataClass.Worker:
+                        List<WorkerView> Workers = new List<WorkerView>();
+
+                        foreach(string line in sb.ToString().Split(seperators, StringSplitOptions.RemoveEmptyEntries))
+                        {
+                            var args = line.Split(',');
+                            WorkerView View = new WorkerView { Id = Int32.Parse(args[0]), Ime = args[1], Prezime = args[2], Pozicija = args[3] };
+                            Workers.Add(View);
+                        }
+                        Connection.ModifyWorker(Workers);
+                        saveButton.Visible = false;
+                        RefreshData();
+                        break;
+
+                    case DataClass.Resource:
+                        List<Resource> Resources = new List<Resource>();
+
+                        foreach (string line in sb.ToString().Split(seperators, StringSplitOptions.RemoveEmptyEntries))
+                        {
+                            var args = line.Split(',');
+                            try
+                            {
+                                double price = Double.Parse(args[2]);
+                                double mass = Double.Parse(args[3]);
+                            }
+                            catch(FormatException exe)
+                            {
+                                MessageBox.Show("Polje nema cijelobrojnu vrijednost!", "Modify Resource Error");
+                            }
+                            Resources.Add(new Resource { Id = Int32.Parse(args[0]), name = args[1], price = Double.Parse(args[2]), mass = Double.Parse(args[3]), metric = args[4] });
+                        }
+                        Connection.ModifyResource(Resources);
+                        saveButton.Visible = false;
+                        RefreshData();
+                        break;
+
+                    case DataClass.Position:
+                        List<Position> Positions = new List<Position>();
+
+                        foreach (string line in sb.ToString().Split(seperators, StringSplitOptions.RemoveEmptyEntries))
+                        {
+                            var args = line.Split(',');
+                            Positions.Add(new Position { Id = Int32.Parse(args[0]), position = args[1] });
+                        }
+                        Connection.ModifyPosition(Positions);
+                        saveButton.Visible = false;
+                        RefreshData();
+                        break;
+
+                    case DataClass.Note:
+                        List<NotesView> Notes = new List<NotesView>();
+
+                        foreach (string line in sb.ToString().Split(seperators, StringSplitOptions.RemoveEmptyEntries))
+                        {
+                            var args = line.Split(',');
+                            try
+                            {
+                                DateTime testDate = DateTime.Parse(args[1]);
+                            }
+                            catch (FormatException exe)
+                            {
+                                MessageBox.Show("Polje nema vrijednost Datuma!", "Modify Note Error");
+                            }
+                            Notes.Add(new NotesView { Id = Int32.Parse(args[0]), Datum = DateTime.Parse(args[1]), Ime = args[2], Prezime = args[3], Napomena = args[4] });
+                        }
+                        Connection.ModifyNote(Notes);
+                        saveButton.Visible = false;
+                        RefreshData();
+                        break;
+
+                    case DataClass.Work:
+                        List<PeriodWorkView> Work = new List<PeriodWorkView>();
+
+                        foreach (string line in sb.ToString().Split(seperators, StringSplitOptions.RemoveEmptyEntries))
+                        {
+                            var args = line.Split(',');
+                            try
+                            {
+                                DateTime testDate = DateTime.Parse(args[1]);
+                                double testDouble = Double.Parse(args[4]);
+                            }
+                            catch (FormatException exe)
+                            {
+                                MessageBox.Show("Polje nema vrijednost Datuma ili cijelog broja!", "Modify Work Error");
+                            }
+                            Work.Add(new PeriodWorkView { Id = Int32.Parse(args[0]), Datum = DateTime.Parse(args[1]), Ime = args[2], Prezime = args[3], Trajanje = Double.Parse(args[4]) });
+                        }
+                        Connection.ModifyWork(Work);
+                        saveButton.Visible = false;
+                        RefreshData();
+                        break;
+
+                    case DataClass.Stock:
+                        List<PeriodResourceView> Stock = new List<PeriodResourceView>();
+
+                        foreach (string line in sb.ToString().Split(seperators, StringSplitOptions.RemoveEmptyEntries))
+                        {
+                            var args = line.Split(',');
+                            try
+                            {
+                                DateTime testDate = DateTime.Parse(args[1]);
+                                double testDouble = Double.Parse(args[4]);
+                                double testDouble1 = Double.Parse(args[3]);
+                            }
+                            catch (FormatException exe)
+                            {
+                                MessageBox.Show("Polje nema vrijednost Datuma ili cijelog broja!", "Modify Stock Error");
+                            }
+                            Stock.Add(new PeriodResourceView { Id = Int32.Parse(args[0]), Datum = DateTime.Parse(args[1]), Resurs = args[2], Količina = Double.Parse(args[3]), Cijena = Double.Parse(args[4]) });
+                        }
+                        Connection.ModifyStock(Stock);
+                        saveButton.Visible = false;
+                        RefreshData();
+                        break;
+                }
+            }
+            else
+            {
+                saveButton.Visible = false;
+                RefreshData();
+            }
+        } 
+
+        void InputBoxClosed(object sender, FormClosedEventArgs e) { RefreshData(); }
+
+        private void RefreshData()
+        {
+            switch (CurrentData)
             {
                 case DataClass.Worker:
-                    List<WorkerView> ListData = new List<WorkerView>();
-
-                    foreach(string line in sb.ToString().Split(seperators, StringSplitOptions.RemoveEmptyEntries))
-                    {
-                        var args = line.Split(',');
-                        WorkerView View = new WorkerView { Id = Int32.Parse(args[0]), Ime = args[1], Prezime = args[2], Pozicija = args[3] };
-                        ListData.Add(View);
-                        Connection.ModifyWorker(ListData);
-                    }
                     dataTable1.DataSource = Connection.ListWorkers();
                     break;
+
+                case DataClass.Resource:
+                    dataTable1.DataSource = Connection.ListResources();
+                    break;
+
+                case DataClass.Position:
+                    dataTable1.DataSource = Connection.ListPositions();
+                    break;
+
+                case DataClass.Note:
+                    dataTable1.DataSource = Connection.ListNotes(dateTimePicker1.Value, dateTimePicker2.Value);
+                    break;
+
+                case DataClass.Stock:
+                    dataTable1.DataSource = Connection.ListResourcePeriods(DateTime.MinValue, DateTime.MaxValue);
+                    break;
+
+                case DataClass.Work:
+                    dataTable1.DataSource = Connection.ListWorksPeriods(DateTime.MinValue, DateTime.MaxValue);
+                    break;
+
             }
+        }
+
+        private void cancelButton_Click(object sender, EventArgs e)
+        {
+           
+            dataTable1.ClearSelection();
+            dataTable2.ClearSelection();
+            saveButton.Visible = false;
+            cancelButton.Visible = false;
+            deleteButton.Visible = false;
+            RefreshData();
+        }
+
+        private void deleteButton_Click(object sender, EventArgs e)
+        {
+            if(dataTable1.SelectedCells.Count == 0 && dataTable2.SelectedCells.Count == 0 )
+            {
+                MessageBox.Show("Nije odabrano niti jedno polje", "Delete info window");
+                saveButton.Visible = false;
+                cancelButton.Visible = false;
+                deleteButton.Visible = false;
+                RefreshData();
+            }
+
+            else
+            {
+                String[] seperators = { "_" };
+
+                StringBuilder sb = new StringBuilder();
+                foreach (DataGridViewRow Row in dataTable1.Rows)
+                {
+                    foreach (DataGridViewCell cell in Row.Cells)
+                    {
+                        if (cell.Selected)
+                            sb.Append(string.Format("{0},", cell.Value.ToString()));
+                    }
+                    sb.Append("_");
+                }
+
+                string message = "Jeste li sigurni da želite izbrisati ";
+                switch (CurrentData)
+                {
+                    case DataClass.Worker:
+
+                        foreach (string line in sb.ToString().Split(seperators, StringSplitOptions.RemoveEmptyEntries))
+                        {
+                            var args = line.Split(',');
+                            int Id;
+                            try
+                            {
+                                Id = int.Parse(args[0]);
+                            }
+                            catch(FormatException exe)
+                            {
+                                MessageBox.Show("Nije odabran redak ili Id zaposlenika", "Delete error message");
+                                return;
+                            }
+                            if (MessageBox.Show(string.Format(message,"zaposlenika s Id-jem: {0}?", Id), "Delete worker window question", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                                Connection.RemoveWorker(Id);
+                        }
+                        RefreshData();
+                        break;
+
+                    case DataClass.Resource:
+
+                        foreach (string line in sb.ToString().Split(seperators, StringSplitOptions.RemoveEmptyEntries))
+                        {
+                            var args = line.Split(',');
+                            int Id;
+                            try
+                            {
+                                Id = int.Parse(args[0]);
+                            }
+                            catch (FormatException exe)
+                            {
+                                MessageBox.Show("Nije odabran redak ili Id resursa", "Delete error message");
+                                return;
+                            }
+
+                            if (MessageBox.Show(string.Format(message, "resurs s Id-jem: {0}?", Id), "Delete resource window question", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                                Connection.RemoveResource(Id);
+                        }
+                        RefreshData();
+                        break;
+
+                    case DataClass.Position:
+
+                        foreach (string line in sb.ToString().Split(seperators, StringSplitOptions.RemoveEmptyEntries))
+                        {
+                            var args = line.Split(',');
+                            int Id;
+                            try
+                            {
+                                Id = int.Parse(args[0]);
+                            }
+                            catch (FormatException exe)
+                            {
+                                MessageBox.Show("Nije odabran redak ili Id pozicije", "Delete error message");
+                                return;
+                            }
+
+                            if (MessageBox.Show(string.Format(message, "poziciju s Id-jem: {0}?", Id), "Delete resource window question", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                                Connection.RemovePosition(Id);
+                        }
+                        RefreshData();
+                        break;
+
+                    case DataClass.Note:
+
+                        foreach (string line in sb.ToString().Split(seperators, StringSplitOptions.RemoveEmptyEntries))
+                        {
+                            var args = line.Split(',');
+                            int Id;
+                            try
+                            {
+                                Id = int.Parse(args[0]);
+                            }
+                            catch (FormatException exe)
+                            {
+                                MessageBox.Show("Nije odabran redak ili Id Napomene", "Delete error message");
+                                return;
+                            }
+
+                            if (MessageBox.Show(string.Format(message, "napomenu s Id-jem: {0}?", Id), "Delete note window question", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                                Connection.RemoveNote(Id);
+                        }
+                        RefreshData();
+                        break;
+
+                    case DataClass.Work:
+
+                        foreach (string line in sb.ToString().Split(seperators, StringSplitOptions.RemoveEmptyEntries))
+                        {
+                            var args = line.Split(',');
+                            int Id;
+                            try
+                            {
+                                Id = int.Parse(args[0]);
+                            }
+                            catch (FormatException exe)
+                            {
+                                MessageBox.Show("Nije odabran redak ili Id Posla", "Delete error message");
+                                return;
+                            }
+
+                            if (MessageBox.Show(string.Format(message, "posao s Id-jem: {0}?", Id), "Delete note window question", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                                Connection.RemoveWork(Id);
+                        }
+                        RefreshData();
+                        break;
+
+                    case DataClass.Stock:
+
+                        foreach (string line in sb.ToString().Split(seperators, StringSplitOptions.RemoveEmptyEntries))
+                        {
+                            var args = line.Split(',');
+                            int Id;
+                            try
+                            {
+                                Id = int.Parse(args[0]);
+                            }
+                            catch (FormatException exe)
+                            {
+                                MessageBox.Show("Nije odabran redak ili Id Zapisa o resursu", "Delete error message");
+                                return;
+                            }
+
+                            if (MessageBox.Show(string.Format(message, "zapis s Id-jem: {0}?", Id), "Delete stock window question", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                                Connection.RemoveStock(Id);
+                        }
+                        RefreshData();
+                        break;
+                }
+            }
+
+        }
+
+        private void dataTable1_CellContentClick(object sender, DataGridViewCellEventArgs e){ deleteButton.Visible = true; }
+
+        private void dataTable1_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e) { deleteButton.Visible = true; }
+
+        private void dataTable1_DataError(object sender, DataGridViewDataErrorEventArgs anError)
+        {
+            MessageBox.Show("Dogodila se greška: krivi format unosa\nProvjerie vrijednosti svih čelija", "Modify Error Window");
         }
     }
 }

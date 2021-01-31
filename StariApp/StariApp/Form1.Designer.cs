@@ -59,6 +59,7 @@
             this.dataTable1 = new System.Windows.Forms.DataGridView();
             this.pictureSlide = new System.Windows.Forms.PictureBox();
             this.gradientPanel1 = new StariApp.GradientPanel();
+            this.deleteButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.eventsViewBindingSource)).BeginInit();
             this.panel1.SuspendLayout();
             this.mainContainer.SuspendLayout();
@@ -284,6 +285,7 @@
             // 
             // mainContainer
             // 
+            this.mainContainer.Controls.Add(this.deleteButton);
             this.mainContainer.Controls.Add(this.searchButton);
             this.mainContainer.Controls.Add(this.dateTimePicker2);
             this.mainContainer.Controls.Add(this.dateTimePicker1);
@@ -352,7 +354,11 @@
             this.dataTable2.Size = new System.Drawing.Size(652, 250);
             this.dataTable2.TabIndex = 12;
             this.dataTable2.Visible = false;
+            this.dataTable2.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataTable1_CellContentClick);
+            this.dataTable2.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataTable1_CellContentClick);
             this.dataTable2.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataTable_CellEndEdit);
+            this.dataTable2.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.dataTable1_DataError);
+            this.dataTable2.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataTable1_RowHeaderMouseClick);
             // 
             // cancelButton
             // 
@@ -440,7 +446,11 @@
             this.dataTable1.Name = "dataTable1";
             this.dataTable1.Size = new System.Drawing.Size(650, 250);
             this.dataTable1.TabIndex = 2;
+            this.dataTable1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataTable1_CellContentClick);
+            this.dataTable1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataTable1_CellContentClick);
             this.dataTable1.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataTable_CellEndEdit);
+            this.dataTable1.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.dataTable1_DataError);
+            this.dataTable1.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataTable1_RowHeaderMouseClick);
             // 
             // pictureSlide
             // 
@@ -469,6 +479,22 @@
             this.gradientPanel1.TabIndex = 1;
             this.gradientPanel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.gradientPanel1_MouseDown);
             this.gradientPanel1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.gradientPanel1_MouseMove);
+            // 
+            // deleteButton
+            // 
+            this.deleteButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(100)))), ((int)(((byte)(150)))));
+            this.deleteButton.FlatAppearance.BorderSize = 0;
+            this.deleteButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.deleteButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.deleteButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(233)))), ((int)(((byte)(242)))));
+            this.deleteButton.Location = new System.Drawing.Point(20, 226);
+            this.deleteButton.Name = "deleteButton";
+            this.deleteButton.Size = new System.Drawing.Size(135, 35);
+            this.deleteButton.TabIndex = 16;
+            this.deleteButton.Text = "Obriši";
+            this.deleteButton.UseVisualStyleBackColor = false;
+            this.deleteButton.Visible = false;
+            this.deleteButton.Click += new System.EventHandler(this.deleteButton_Click);
             // 
             // form1
             // 
@@ -536,6 +562,7 @@
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Button searchButton;
+        private System.Windows.Forms.Button deleteButton;
     }
 }
 
